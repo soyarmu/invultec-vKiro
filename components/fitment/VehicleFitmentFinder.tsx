@@ -74,13 +74,13 @@ export function VehicleFitmentFinder() {
         <div className="animate-fade-in">
           <div className="mb-6">
             <p className="text-sm font-medium uppercase tracking-wide text-brand-red">
-              Find Your Fit
+              Encuentra Tu Ajuste
             </p>
             <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
-              What do you drive?
+              ¿Qué conduces?
             </h2>
             <p className="mt-2 text-neutral-600">
-              Tell us your vehicle and we&apos;ll find the right size for you.
+              Dinos tu vehículo y encontraremos el tamaño correcto para ti.
             </p>
           </div>
 
@@ -93,10 +93,10 @@ export function VehicleFitmentFinder() {
         <div className="animate-fade-in flex min-h-[300px] flex-col items-center justify-center py-12">
           <Loader2 className="h-12 w-12 animate-spin text-brand-red" aria-hidden="true" />
           <p className="mt-4 text-lg font-medium text-neutral-900">
-            Checking your vehicle...
+            Verificando tu vehículo...
           </p>
           <p className="mt-1 text-sm text-neutral-600">
-            Finding the perfect fit
+            Encontrando el ajuste perfecto
           </p>
         </div>
       )}
@@ -106,13 +106,13 @@ export function VehicleFitmentFinder() {
         <div className="animate-slide-up">
           <div className="mb-6">
             <p className="text-sm font-medium uppercase tracking-wide text-brand-red">
-              One More Step
+              Un Paso Más
             </p>
             <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
-              Let&apos;s verify your spring gap
+              Verifiquemos el espacio de tu resorte
             </h2>
             <p className="mt-2 text-neutral-600">
-              We need a quick measurement to confirm the right fit for your{' '}
+              Necesitamos una medida rápida para confirmar el ajuste correcto para tu{' '}
               <span className="font-medium">
                 {vehicle.year} {vehicle.make} {vehicle.model}
               </span>
@@ -127,7 +127,7 @@ export function VehicleFitmentFinder() {
               onClick={handleReset}
               className="text-sm text-neutral-600 hover:text-neutral-900 hover:underline"
             >
-              Start over
+              Comenzar de nuevo
             </button>
           </div>
         </div>

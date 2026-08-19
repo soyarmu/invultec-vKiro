@@ -48,9 +48,9 @@ export function Navbar() {
               className="flex items-center gap-2 text-xl font-bold text-neutral-900 hover:text-brand-red transition-colors"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-red">
-                <span className="text-lg font-bold text-white">CS</span>
+                <span className="text-lg font-bold text-white">AR</span>
               </div>
-              <span className="hidden sm:inline">Coil Spring Buffers</span>
+              <span className="hidden sm:inline">Amortiguadores de Resorte</span>
             </button>
           </div>
 
@@ -60,26 +60,26 @@ export function Navbar() {
               onClick={() => scrollToSection('how-it-works')}
               className="text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
             >
-              How It Works
+              Cómo Funciona
             </button>
             <button
               onClick={scrollToFinder}
               className="text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
             >
-              Find Your Fit
+              Encuentra Tu Ajuste
             </button>
             <button
               onClick={() => scrollToSection('faq')}
               className="text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
             >
-              FAQ
+              Preguntas Frecuentes
             </button>
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Button variant="primary" size="md" onClick={scrollToFinder}>
-              Find My Fit
+              Encuentra Mi Ajuste
             </Button>
           </div>
 
@@ -87,7 +87,7 @@ export function Navbar() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="flex h-10 w-10 items-center justify-center rounded-md text-neutral-700 hover:bg-neutral-100 md:hidden"
-            aria-label="Toggle menu"
+            aria-label="Alternar menú"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -107,19 +107,19 @@ export function Navbar() {
                 onClick={() => scrollToSection('how-it-works')}
                 className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
               >
-                How It Works
+                Cómo Funciona
               </button>
               <button
                 onClick={scrollToFinder}
                 className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
               >
-                Find Your Fit
+                Encuentra Tu Ajuste
               </button>
               <button
                 onClick={() => scrollToSection('faq')}
                 className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
               >
-                FAQ
+                Preguntas Frecuentes
               </button>
               <div className="pt-2">
                 <Button
@@ -128,7 +128,7 @@ export function Navbar() {
                   onClick={scrollToFinder}
                   className="w-full"
                 >
-                  Find My Fit
+                  Encuentra Mi Ajuste
                 </Button>
               </div>
             </div>

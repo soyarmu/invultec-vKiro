@@ -24,12 +24,12 @@ export function MeasurementInput({
     const gap = parseFloat(springGap);
     
     if (!springGap || isNaN(gap) || gap <= 0) {
-      setError('Please enter a valid measurement');
+      setError('Por favor ingrese una medida válida');
       return;
     }
 
     if (gap < 0.5 || gap > 5) {
-      setError('Measurement should be between 0.5 and 5 inches');
+      setError('La medida debe estar entre 0.5 y 5 pulgadas');
       return;
     }
 
@@ -43,11 +43,11 @@ export function MeasurementInput({
           <Ruler className="mt-1 h-5 w-5 text-brand-red" aria-hidden="true" />
           <div>
             <h4 className="font-semibold text-neutral-900">
-              Measure Your Spring Gap
+              Mide el Espacio de Tu Resorte
             </h4>
             <p className="mt-1 text-sm text-neutral-600">
-              Measure the gap between the coils of your spring when the vehicle
-              is at rest. Use a ruler or caliper for accuracy.
+              Mide el espacio entre las bobinas de tu resorte cuando el vehículo
+              está en reposo. Usa una regla o calibrador para mayor precisión.
             </p>
           </div>
         </div>
@@ -61,11 +61,11 @@ export function MeasurementInput({
               max="5"
               value={springGap}
               onChange={(e) => setSpringGap(e.target.value)}
-              placeholder="e.g., 1.35"
-              label="Spring Gap (inches)"
+              placeholder="ej., 1.35"
+              label="Espacio del Resorte (pulgadas)"
               error={error}
               disabled={disabled}
-              aria-label="Spring gap measurement in inches"
+              aria-label="Medida del espacio del resorte en pulgadas"
             />
           </div>
           <Button
@@ -75,18 +75,18 @@ export function MeasurementInput({
             disabled={disabled || !springGap}
             className="sm:w-auto"
           >
-            Find My Size
+            Encontrar Mi Tamaño
           </Button>
         </div>
       </div>
 
       <div className="text-center text-sm text-neutral-500">
-        Need help measuring?{' '}
+        ¿Necesitas ayuda para medir?{' '}
         <a
           href="#measurement-guide"
           className="font-medium text-brand-red hover:underline"
         >
-          View measurement guide
+          Ver guía de medición
         </a>
       </div>
     </form>

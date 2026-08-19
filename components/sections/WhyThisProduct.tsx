@@ -3,26 +3,26 @@ import { Shield, Wrench, Layers, Package } from 'lucide-react';
 const benefits = [
   {
     icon: Layers,
-    title: 'Designed for a Better Fit',
+    title: 'Diseñado para un Mejor Ajuste',
     description:
-      'Available in multiple sizes to match your specific spring gap for optimal performance.',
+      'Disponible en múltiples tamaños para coincidir con tu espacio de resorte específico para un rendimiento óptimo.',
   },
   {
     icon: Shield,
-    title: 'Supports the Coil Spring',
+    title: 'Soporta el Resorte de Bobina',
     description:
-      'Helps maintain proper spring compression and reduces excessive movement.',
+      'Ayuda a mantener la compresión adecuada del resorte y reduce el movimiento excesivo.',
   },
   {
     icon: Wrench,
-    title: 'Easy Installation',
+    title: 'Instalación Fácil',
     description:
-      'Simple to install without specialized tools or professional assistance.',
+      'Simple de instalar sin herramientas especializadas o asistencia profesional.',
   },
   {
     icon: Package,
-    title: 'Complete Kit',
-    description: 'Includes 2 buffers per pack, ready to install on your vehicle.',
+    title: 'Kit Completo',
+    description: 'Incluye 2 amortiguadores por paquete, listos para instalar en tu vehículo.',
   },
 ];
 
@@ -32,10 +32,10 @@ export function WhyThisProduct() {
       <div className="container-custom">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-neutral-900 sm:text-4xl">
-            Why Choose Our Coil Spring Buffers?
+            ¿Por Qué Elegir Nuestros Amortiguadores de Resorte?
           </h2>
           <p className="mt-4 text-lg text-neutral-600">
-            Precision-engineered components for your vehicle&apos;s suspension system.
+            Componentes de precisión ingeniera para el sistema de suspensión de tu vehículo.
           </p>
         </div>
 

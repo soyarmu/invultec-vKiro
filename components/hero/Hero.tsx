@@ -18,15 +18,15 @@ export function Hero() {
           {/* Left Content */}
           <div className="flex flex-col justify-center">
             <p className="text-sm font-semibold uppercase tracking-wide text-brand-red">
-              Find Your Fit
+              Encuentra Tu Ajuste
             </p>
             
             <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Find the Right Coil Spring Buffer for Your Car
+              Encuentra el Amortiguador de Resorte Correcto para Tu Auto
             </h1>
             
             <p className="mt-6 text-lg text-neutral-300 sm:text-xl">
-              Tell us what you drive and we&apos;ll help you find the right size.
+              Dinos qué conduces y te ayudaremos a encontrar el tamaño correcto.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -36,7 +36,7 @@ export function Hero() {
                 onClick={scrollToFinder}
                 className="group"
               >
-                Find My Fit
+                Encuentra Mi Ajuste
                 <ArrowRight
                   className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
                   aria-hidden="true"
@@ -47,15 +47,15 @@ export function Hero() {
             <div className="mt-10 flex flex-col gap-3 text-sm text-neutral-400">
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-brand-red" aria-hidden="true" />
-                <span>Fast. Simple. Vehicle-specific.</span>
+                <span>Rápido. Simple. Específico para tu vehículo.</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-brand-red" aria-hidden="true" />
-                <span>Multiple sizes available</span>
+                <span>Múltiples tamaños disponibles</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-brand-red" aria-hidden="true" />
-                <span>Easy installation</span>
+                <span>Instalación fácil</span>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ export function Hero() {
                   <div className="text-center">
                     <div className="mx-auto h-48 w-48 rounded-full bg-neutral-600 opacity-20"></div>
                     <p className="mt-4 text-sm text-neutral-500">
-                      Product Image Placeholder
+                      Imagen del Producto
                     </p>
                   </div>
                 </div>

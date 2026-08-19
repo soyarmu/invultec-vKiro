@@ -2,25 +2,25 @@ import { Search, CheckCircle, ShoppingCart } from 'lucide-react';
 
 const steps = [
   {
-    number: '01',
+    number: "01",
     icon: Search,
-    title: 'Tell us your car',
+    title: 'Dinos tu auto',
     description:
-      'Enter your vehicle make, model, and year to get started with our fitment finder.',
+      'Ingresa la marca, modelo y año de tu vehículo para comenzar con nuestro buscador de ajustes.',
   },
   {
     number: "02",
     icon: CheckCircle,
-    title: "Find your fit",
+    title: 'Encuentra tu ajuste',
     description:
-      "We'll analyze your vehicle and recommend the right buffer size based on compatibility data.",
+      "Analizaremos tu vehículo y recomendaremos el tamaño correcto del amortiguador basado en datos de compatibilidad.",
   },
   {
     number: '03',
     icon: ShoppingCart,
-    title: 'Get your buffer',
+    title: 'Obtén tu amortiguador',
     description:
-      'Order with confidence knowing you have the correct size for your vehicle.',
+      'Ordena con confianza sabiendo que tienes el tamaño correcto para tu vehículo.',
   },
 ];
 
@@ -30,10 +30,10 @@ export function HowItWorks() {
       <div className="container-custom">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-neutral-900 sm:text-4xl">
-            How It Works
+            Cómo Funciona
           </h2>
           <p className="mt-4 text-lg text-neutral-600">
-            Three simple steps to find the perfect fit for your vehicle
+            Tres simples pasos para encontrar el ajuste perfecto para tu vehículo
           </p>
         </div>
 

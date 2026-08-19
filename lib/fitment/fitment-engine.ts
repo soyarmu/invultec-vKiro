@@ -143,20 +143,20 @@ export function getConfidenceBadgeInfo(confidence: FitmentConfidence): {
   switch (confidence) {
     case 'HIGH':
       return {
-        text: 'High Confidence',
-        description: 'This fit is supported by our vehicle compatibility data',
+        text: 'Alta Confianza',
+        description: 'Este ajuste está respaldado por nuestros datos de compatibilidad vehicular',
         variant: 'high',
       };
     case 'MEDIUM':
       return {
-        text: 'Likely Match',
-        description: 'We recommend verifying your spring gap before ordering',
+        text: 'Coincidencia Probable',
+        description: 'Recomendamos verificar el espacio de tu resorte antes de ordenar',
         variant: 'medium',
       };
     case 'MEASUREMENT_REQUIRED':
       return {
-        text: 'Measurement Required',
-        description: 'We need one quick measurement to confirm your fit',
+        text: 'Medida Requerida',
+        description: 'Necesitamos una medida rápida para confirmar tu ajuste',
         variant: 'measurement',
       };
   }

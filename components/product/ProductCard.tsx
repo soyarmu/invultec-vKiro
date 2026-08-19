@@ -29,7 +29,7 @@ export function ProductCard({
             {product.name}
           </h3>
           <p className="mt-1 text-sm text-neutral-600">
-            Type {product.type} • {product.quantityInPack}-Pack
+            Tipo {product.type} • Paquete de {product.quantityInPack}
           </p>
           <p className="mt-2 text-sm text-neutral-600">{product.description}</p>
         </div>
@@ -41,7 +41,7 @@ export function ProductCard({
         </div>
 
         <div className="mb-4 rounded-md bg-neutral-50 p-3">
-          <p className="text-xs font-medium text-neutral-700">Spring Gap</p>
+          <p className="text-xs font-medium text-neutral-700">Espacio del Resorte</p>
           <p className="text-sm text-neutral-900">
             {product.springGapMin.toFixed(2)}&quot; – {product.springGapMax.toFixed(2)}&quot;
           </p>
@@ -54,7 +54,7 @@ export function ProductCard({
             onClick={onPrimaryClick}
             className="w-full"
           >
-            Get My Fit
+            Obtener Mi Ajuste
           </Button>
           {onSecondaryClick && (
             <Button
@@ -63,7 +63,7 @@ export function ProductCard({
               onClick={onSecondaryClick}
               className="w-full"
             >
-              Verify My Size
+              Verificar Mi Tamaño
             </Button>
           )}
         </div>

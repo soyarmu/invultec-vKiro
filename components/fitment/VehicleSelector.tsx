@@ -78,13 +78,13 @@ export function VehicleSelector({
   return (
     <div className="space-y-4">
       <Select
-        label="Make"
+        label="Marca"
         value={make}
         onChange={(e) => setMake(e.target.value)}
         disabled={disabled}
-        aria-label="Select vehicle make"
+        aria-label="Seleccione la marca del vehículo"
       >
-        <option value="">Select Make</option>
+        <option value="">Seleccione Marca</option>
         {makes.map((m) => (
           <option key={m} value={m}>
             {m}
@@ -93,13 +93,13 @@ export function VehicleSelector({
       </Select>
 
       <Select
-        label="Model"
+        label="Modelo"
         value={model}
         onChange={(e) => setModel(e.target.value)}
         disabled={disabled || !make}
-        aria-label="Select vehicle model"
+        aria-label="Seleccione el modelo del vehículo"
       >
-        <option value="">Select Model</option>
+        <option value="">Seleccione Modelo</option>
         {availableModels.map((m) => (
           <option key={m} value={m}>
             {m}
@@ -108,13 +108,13 @@ export function VehicleSelector({
       </Select>
 
       <Select
-        label="Year"
+        label="Año"
         value={year}
         onChange={(e) => setYear(e.target.value)}
         disabled={disabled || !model}
-        aria-label="Select vehicle year"
+        aria-label="Seleccione el año del vehículo"
       >
-        <option value="">Select Year</option>
+        <option value="">Seleccione Año</option>
         {availableYears.map((y) => (
           <option key={y} value={y}>
             {y}

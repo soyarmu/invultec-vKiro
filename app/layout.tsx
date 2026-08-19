@@ -2,34 +2,34 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Coil Spring Buffer Fitment Tool | Find Your Perfect Fit',
+  title: 'Amortiguadores de Resorte de Bobina | Encuentra Tu Ajuste Perfecto',
   description:
-    'Find the right coil spring buffer for your vehicle. Enter your make, model, and year to get vehicle-specific recommendations. Available in multiple sizes.',
+    'Encuentra el amortiguador de resorte correcto para tu vehículo. Ingresa la marca, modelo y año para obtener recomendaciones específicas. Disponible en múltiples tamaños.',
   keywords: [
-    'coil spring buffer',
-    'car coil spring buffer',
-    'shock absorber spring buffer',
-    'spring bumper',
-    'coil spring spacer',
-    'vehicle fitment',
-    'suspension buffer',
-    'universal coil spring buffer',
+    'amortiguador de resorte',
+    'buffer de resorte automotriz',
+    'amortiguador de suspensión',
+    'espaciador de resorte',
+    'tope de resorte',
+    'ajuste vehicular',
+    'buffer de suspensión',
+    'amortiguador universal de resorte',
   ],
-  authors: [{ name: 'Coil Spring Buffers' }],
+  authors: [{ name: 'Amortiguadores de Resorte' }],
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'es_ES',
     url: 'https://example.com',
-    title: 'Coil Spring Buffer Fitment Tool | Find Your Perfect Fit',
+    title: 'Amortiguadores de Resorte de Bobina | Encuentra Tu Ajuste Perfecto',
     description:
-      'Find the right coil spring buffer for your vehicle. Vehicle-specific recommendations based on make, model, and year.',
-    siteName: 'Coil Spring Buffers',
+      'Encuentra el amortiguador de resorte correcto para tu vehículo. Recomendaciones específicas basadas en marca, modelo y año.',
+    siteName: 'Amortiguadores de Resorte',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Coil Spring Buffer Fitment Tool | Find Your Perfect Fit',
+    title: 'Amortiguadores de Resorte de Bobina | Encuentra Tu Ajuste Perfecto',
     description:
-      'Find the right coil spring buffer for your vehicle. Vehicle-specific recommendations.',
+      'Encuentra el amortiguador de resorte correcto para tu vehículo. Recomendaciones específicas para tu vehículo.',
   },
   robots: {
     index: true,
@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="es" className="scroll-smooth">
       <body>{children}</body>
     </html>
   );

@@ -54,7 +54,7 @@ export function FitmentResult({
             />
             <div className="flex-1">
               <h2 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
-                Good news — we found your fit
+                Buenas noticias — encontramos tu ajuste
               </h2>
               <p className="mt-2 text-neutral-600">
                 {vehicle.year} {vehicle.make} {vehicle.model}
@@ -67,14 +67,14 @@ export function FitmentResult({
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <p className="text-sm font-medium text-neutral-700">
-                Recommended Type
+                Tipo Recomendado
               </p>
               <p className="mt-1 text-2xl font-bold text-neutral-900">
-                Type {recommendedType}
+                Tipo {recommendedType}
               </p>
             </div>
             <div>
-              <p className="text-sm font-medium text-neutral-700">Spring Gap</p>
+              <p className="text-sm font-medium text-neutral-700">Espacio del Resorte</p>
               <p className="mt-1 text-2xl font-bold text-neutral-900">
                 {springGap.min.toFixed(2)}&quot; – {springGap.max.toFixed(2)}&quot;
               </p>
@@ -90,10 +90,10 @@ export function FitmentResult({
 
           {isDemo && (
             <div className="mt-4 border-t border-neutral-200 pt-4">
-              <Badge variant="demo">DEMO DATA</Badge>
+              <Badge variant="demo">DATOS DE DEMOSTRACIÓN</Badge>
               <p className="mt-2 text-xs text-neutral-500">
-                This is demonstration data. Production system would use verified
-                vehicle compatibility data.
+                Estos son datos de demostración. El sistema de producción usaría
+                datos de compatibilidad vehicular verificados.
               </p>
             </div>
           )}
@@ -101,7 +101,7 @@ export function FitmentResult({
 
         <div className="mb-6">
           <h3 className="mb-4 text-lg font-semibold text-neutral-900">
-            Recommended Product
+            Producto Recomendado
           </h3>
           <div className="mx-auto max-w-sm">
             <ProductCard
@@ -117,7 +117,7 @@ export function FitmentResult({
             onClick={onReset}
             className="text-sm text-neutral-600 hover:text-neutral-900 hover:underline"
           >
-            Check another vehicle
+            Verificar otro vehículo
           </button>
         </div>
       </div>
@@ -136,7 +136,7 @@ export function FitmentResult({
             />
             <div className="flex-1">
               <h2 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
-                We don&apos;t have a verified fit for this vehicle yet
+                Aún no tenemos un ajuste verificado para este vehículo
               </h2>
               <p className="mt-2 text-neutral-600">
                 {vehicle.year} {vehicle.make} {vehicle.model}
@@ -147,16 +147,16 @@ export function FitmentResult({
 
         <div className="rounded-lg border-2 border-neutral-200 bg-neutral-50 p-6">
           <p className="text-neutral-700">
-            {notes || "No fitment data available for this vehicle."}
+            {notes || "No hay datos de ajuste disponibles para este vehículo."}
           </p>
           <p className="mt-4 text-sm text-neutral-600">
-            You can still find the right size by measuring your spring gap.
+            Aún puedes encontrar el tamaño correcto midiendo el espacio de tu resorte.
           </p>
           <a
             href="#measurement-guide"
             className="mt-4 inline-block font-medium text-brand-red hover:underline"
           >
-            View measurement guide →
+            Ver guía de medición →
           </a>
         </div>
 
@@ -165,7 +165,7 @@ export function FitmentResult({
             onClick={onReset}
             className="text-sm text-neutral-600 hover:text-neutral-900 hover:underline"
           >
-            Try another vehicle
+            Intentar con otro vehículo
           </button>
         </div>
       </div>
@@ -183,10 +183,10 @@ export function FitmentResult({
           />
           <div className="flex-1">
             <h2 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
-              Unable to determine fit
+              No se puede determinar el ajuste
             </h2>
             <p className="mt-2 text-neutral-600">
-              {notes || 'Please check your vehicle information and try again.'}
+              {notes || 'Por favor verifica la información de tu vehículo e intenta nuevamente.'}
             </p>
           </div>
         </div>
@@ -197,7 +197,7 @@ export function FitmentResult({
           onClick={onReset}
           className="text-sm text-neutral-600 hover:text-neutral-900 hover:underline"
         >
-          Try again
+          Intentar nuevamente
         </button>
       </div>
     </div>
