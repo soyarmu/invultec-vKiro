@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "mcp-atlassian": {
+      "command": "uvx",
+      "args": ["mcp-atlassian@latest"],
+      "env": {
+          "JIRA_URL": "NEXT_PUBLIC_JIRA_URL",
+          "JIRA_USERNAME": "NEXT_PUBLIC_JIRA_USERNAME",
+          "JIRA_API_TOKEN": "NEXT_PUBLIC_JIRA_TOKEN",
+          "CONFLUENCE_URL": "NEXT_PUBLIC_JIRA_URL",
+          "CONFLUENCE_USERNAME": "NEXT_PUBLIC_JIRA_USERNAME",
+          "CONFLUENCE_API_TOKEN": "NEXT_PUBLIC_JIRA_TOKEN"
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "years": [
+    "2026",
+    "2025",
+    "2024",
+    "2023",
+    "2022",
+    "2021",
+    "2020",
+    "2019",
+    "2018",
+    "2017",
+    "2016",
+    "2015",
+    "2014",
+    "2013",
+    "2012",
+    "2011",
+    "2010",
+    "2009",
+    "2008",
+    "2007",
+    "2006",
+    "2005",
+    "2004",
+    "2003",
+    "2002",
+    "2001",
+    "2000"
+  ],
+  "brands": [
+    {
+      "id": "toyota",
+      "name": "Toyota",
+      "models": ["Hilux", "Prado", "Fortuner", "Corolla Cross", "Yaris Cross", "RAV4", "SW4", "Land Cruiser 300", "4Runner"]
+    },
+    {
+      "id": "kia",
+      "name": "Kia",
+      "models": ["Picanto", "Rio", "Soluto", "Sportage", "Seltos", "Sonet", "K3", "Stonic"]
+    },
+    {
+      "id": "chevrolet",
+      "name": "Chevrolet",
+      "models": ["Onix", "Joy", "Tracker", "Captiva", "Colorado", "Trailblazer", "N300 / N400", "Tahoe"]
+    },
+    {
+      "id": "nissan",
+      "name": "Nissan",
+      "models": ["Versa", "Kicks", "Frontier", "March", "Sentra", "X-Trail", "Qashqai"]
+    },
+    {
+      "id": "mazda",
+      "name": "Mazda",
+      "models": ["Mazda 2", "Mazda 3", "CX-30", "CX-5", "CX-50", "CX-60", "CX-90"]
+    },
+    {
+      "id": "renault",
+      "name": "Renault",
+      "models": ["Kwid", "Stepway", "Logan", "Sandero", "Duster", "Oroch", "Koleos", "Master"]
+    },
+    {
+      "id": "hyundai",
+      "name": "Hyundai",
+      "models": ["HB20", "Tucson", "Creta", "Kona", "Santa Fe", "Staria", "Grand i10"]
+    },
+    {
+      "id": "suzuki",
+      "name": "Suzuki",
+      "models": ["Swift", "Vitara", "Grand Vitara", "Jimny", "S-Cross", "Baleno", "Ertiga", "XL7"]
+    },
+    {
+      "id": "volkswagen",
+      "name": "Volkswagen",
+      "models": ["Gol", "Polo", "Virtus", "Nivus", "T-Cross", "Taos", "Tiguan", "Amarok", "Saveiro"]
+    },
+    {
+      "id": "ford",
+      "name": "Ford",
+      "models": ["Ranger", "Explorer", "Escape", "Edge", "Bronco Sport", "F-150", "Mustang"]
+    },
+    {
+      "id": "byd",
+      "name": "BYD",
+      "models": ["Dolphin", "Dolphin Mini", "Yuan Plus", "Song Plus", "Tang", "Han", "Seal"]
+    },
+    {
+      "id": "jac",
+      "name": "JAC",
+      "models": ["JS2", "JS3", "JS4", "JS8", "T6", "T8", "Refine", "E10X"]
+    },
+    {
+      "id": "foton",
+      "name": "Foton",
+      "models": ["Tunland G7", "Tunland V7", "Aumark", "Gratour", "View C2"]
+    },
+    {
+      "id": "peugeot",
+      "name": "Peugeot",
+      "models": ["208", "2008", "3008", "5008", "Partner", "Expert"]
+    },
+    {
+      "id": "jeep",
+      "name": "Jeep",
+      "models": ["Renegade", "Compass", "Commander", "Grand Cherokee", "Wrangler", "Gladiator"]
+    },
+    {
+      "id": "honda",
+      "name": "Honda",
+      "models": ["CR-V", "HR-V", "WR-V", "Civic", "City", "Pilot"]
+    },
+    {
+      "id": "subaru",
+      "name": "Subaru",
+      "models": ["XV / Crosstrek", "Forester", "Outback", "Evoltis", "WRX"]
+    },
+    {
+      "id": "bmw",
+      "name": "BMW",
+      "models": ["Serie 1", "Serie 3", "Serie 5", "X1", "X3", "X4", "X5", "X6", "iX3", "i4"]
+    },
+    {
+      "id": "mercedes-benz",
+      "name": "Mercedes-Benz",
+      "models": ["Clase A", "Clase C", "Clase E", "GLA", "GLB", "GLC", "GLE", "EQA", "EQB"]
+    },
+    {
+      "id": "audi",
+      "name": "Audi",
+      "models": ["A3", "A4", "Q2", "Q3", "Q5", "Q7", "Q8", "e-tron"]
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "models": ["Model 3", "Model Y", "Model S", "Model X", "Cybertruck"]
+    }
+  ]
+}

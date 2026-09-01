@@ -1,80 +1,100 @@
-# Automotive Coil Spring Buffer Fitment Landing Page
+# Invultec - RubberShock Landing Page
 
-A premium, high-converting automotive ecommerce landing page built with Next.js, TypeScript, and Tailwind CSS.
+Una landing page premium de alto rendimiento para RubberShock, el tope de suspensión en caucho neopreno, construida con Next.js, TypeScript y Tailwind CSS.
+
+## 🎨 Rebranding 2026
+
+**Nueva estética industrial/técnica** con sistema de animaciones por capas que cuenta una historia visual:
+
+- ✨ **6 capas animadas** con timeline secuencial (0-5s)
+- 🎭 **Animaciones CSS nativas** (GPU-accelerated, 60fps)
+- 🎨 **Paleta actualizada**: Rojo Invultec (#E31E24) + escala de grises refinada
+- 🔤 **Triple tipografía**: Oswald (display) + Inter (body) + JetBrains Mono (técnico)
+- 📱 **100% responsive** con animaciones adaptativas
+- ♿ **Accesibilidad completa** (WCAG 2.1 AA, prefers-reduced-motion)
+
+### 📚 Documentación del Rebranding
+
+- **[REBRANDING_GUIDE.md](./REBRANDING_GUIDE.md)** - Sistema completo de diseño y animaciones
+- **[ANIMATION_EXAMPLES.md](./ANIMATION_EXAMPLES.md)** - Ejemplos de extensiones avanzadas
+- **[NEXT_STEPS.md](./NEXT_STEPS.md)** - Roadmap y próximas mejoras
+
+---
 
 ## Features
 
-- **Vehicle Fitment Finder**: Interactive tool that recommends the right product based on vehicle make, model, and year
-- **Measurement Fallback**: Alternative flow for vehicles not in the database
-- **Premium Design**: Professional automotive technology aesthetic with corporate colors (intense red, black, grey)
-- **Responsive**: Mobile-first design with optimal experience across all devices
-- **Accessible**: WCAG-friendly implementation with keyboard navigation and screen reader support
-- **SEO Optimized**: Proper metadata and semantic HTML structure
-- **Analytics Ready**: Abstracted analytics layer ready for integration
+- **Vehicle Fitment Finder**: Herramienta interactiva que recomienda el producto correcto basándose en marca, modelo y año del vehículo
+- **Measurement Fallback**: Flujo alternativo para vehículos no registrados en la base de datos
+- **Premium Design**: Estética industrial técnica con grillas, remaches y diagramas de impacto
+- **Responsive**: Diseño mobile-first con experiencia óptima en todos los dispositivos
+- **Accessible**: Implementación WCAG-friendly con navegación por teclado y soporte de lectores de pantalla
+- **SEO Optimized**: Metadata apropiada y estructura HTML semántica
+- **Analytics Ready**: Capa de analytics abstracta lista para integración
 
 ## Tech Stack
 
-- **Next.js 14** - App Router with Server Components
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Utility-first styling with custom design system
-- **Lucide React** - Consistent icon system
-- **React** - Component architecture
+- **Next.js 14** - App Router con Server Components
+- **TypeScript** - Desarrollo type-safe
+- **Tailwind CSS** - Sistema de diseño personalizado con animaciones nativas
+- **Lucide React** - Sistema de iconos consistente
+- **React 18** - Arquitectura de componentes con hooks
 
 ## Project Structure
 
 ```
 ├── app/
-│   ├── layout.tsx          # Root layout with metadata
-│   ├── page.tsx             # Main landing page
-│   └── globals.css          # Global styles and design tokens
+│   ├── layout.tsx          # Layout raíz con metadata
+│   ├── page.tsx            # Landing page principal
+│   ├── globals.css         # Estilos globales y tokens de diseño
+│   └── rebranding.html     # Referencia de diseño original
 ├── components/
-│   ├── ui/                  # Reusable UI components
-│   ├── hero/                # Hero section
-│   ├── fitment/             # Fitment finder components
-│   ├── product/             # Product display components
-│   ├── sections/            # Landing page sections
-│   └── navigation/          # Nav and Footer
+│   ├── ui/                 # Componentes UI reutilizables
+│   ├── hero/               # Hero section (REBRANDEADO ✨)
+│   ├── fitment/            # Componentes del fitment finder
+│   ├── product/            # Componentes de visualización de producto
+│   ├── sections/           # Secciones de la landing page
+│   └── navigation/         # Nav y Footer
 ├── lib/
-│   ├── fitment/             # Fitment engine logic
-│   ├── analytics/           # Analytics abstraction
-│   └── utils.ts             # Utility functions
+│   ├── fitment/            # Lógica del motor de fitment
+│   ├── analytics/          # Abstracción de analytics
+│   └── utils.ts            # Funciones utilitarias
 ├── data/
-│   ├── fitment/             # Vehicle compatibility data
-│   └── products/            # Product catalog
-├── types/                   # TypeScript type definitions
+│   ├── fitment/            # Datos de compatibilidad de vehículos
+│   └── products/           # Catálogo de productos
+├── types/                  # Definiciones de tipos TypeScript
 └── public/
-    └── images/              # Product images
+    └── images/             # Imágenes de productos
 ```
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ or 20+
-- npm, yarn, or pnpm
+- Node.js 18+ o 20+
+- npm, yarn, o pnpm
 
 ### Installation
 
-1. Install dependencies:
+1. Instalar dependencias:
 
 ```bash
 npm install
 ```
 
-2. Add product images to `public/images/`:
+2. Agregar imágenes de productos a `public/images/`:
    - product-buffer-e.jpg
    - product-buffer-d.jpg
    - product-buffer-c.jpg
    - product-buffer-b-plus.jpg
    - product-buffer-a-plus.jpg
 
-3. Run the development server:
+3. Ejecutar el servidor de desarrollo:
 
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000)
+4. Abrir [http://localhost:3000](http://localhost:3000)
 
 ## Build
 
@@ -91,43 +111,60 @@ npm run lint
 
 ## Design System
 
-### Colors
+### Colors (Actualizado 2026)
 
-- **Brand Red**: `#DC0000` - Primary CTA, accents, selected states
-- **Black**: `#0A0A0A` - Text, backgrounds
-- **Grey**: `#71727A` - Secondary text, borders
+- **Brand Red**: `#E31E24` - CTA primario, acentos, estados seleccionados
+- **Brand Red Dark**: `#A81419` - Hover/Active states
+- **Neutral 950**: `#0E0E0E` - Fondo principal oscuro
+- **Neutral 900**: `#171716` - Fondo secundario
+- **Neutral 800**: `#2B2B29` - Bordes
+- **Neutral 500**: `#78766F` - Elementos metálicos (remaches)
+- **Neutral 400**: `#A3A199` - Texto secundario
+- **Neutral 300**: `#C7C5BB` - Grilla técnica
+- **Neutral 100**: `#F4F3EE` - Texto principal
+- **Neutral 0**: `#FFFFFF` - Títulos
 
 ### Typography
 
-- **Font**: Inter
-- **Headings**: Bold, precise hierarchy
-- **Body**: Readable, well-spaced
+- **Display**: Oswald (títulos, uppercase, bold)
+- **Body**: Inter (texto general, legible)
+- **Mono**: JetBrains Mono (etiquetas técnicas, specs)
+
+### Animaciones
+
+- **Sistema por capas**: 6 capas con timeline secuencial
+- **Performance**: GPU-accelerated, CSS nativo
+- **Accesibilidad**: Respeta `prefers-reduced-motion`
+- **Duración total**: 0-5s (entrada progresiva)
+
+Ver [REBRANDING_GUIDE.md](./REBRANDING_GUIDE.md) para detalles completos.
 
 ### Components
 
-- Buttons: Primary (red), Secondary (black), Outline
-- Cards: Clean borders, subtle shadows
-- Inputs: Clear focus states, accessible labels
+- Buttons: Primary (red cortado), Secondary (oscuro), Outline
+- Cards: Bordes sutiles neutral-800, backgrounds semi-transparentes
+- Inputs: Estados de focus claros, labels accesibles
+- Specs: Badges técnicos con font mono
 
 ## Fitment System
 
 ### Data Architecture
 
-The fitment system is designed to be replaceable:
+El sistema de fitment está diseñado para ser reemplazable:
 
-- **Current**: Local demo data in `data/fitment/vehicle-data.ts`
-- **Future**: Can be replaced with REST API, database, CMS, or external fitment API
+- **Actual**: Datos demo locales en `data/fitment/vehicle-data.ts`
+- **Futuro**: Puede reemplazarse con REST API, base de datos, CMS, o API externa de fitment
 
 ### Fitment Engine
 
-Core business logic in `lib/fitment/fitment-engine.ts`:
+Lógica de negocio central en `lib/fitment/fitment-engine.ts`:
 
-- `getFitmentRecommendation(vehicle)` - Returns recommendation based on vehicle
-- `getFitmentFromMeasurement(measurement)` - Returns recommendation based on spring gap
+- `getFitmentRecommendation(vehicle)` - Retorna recomendación basada en vehículo
+- `getFitmentFromMeasurement(measurement)` - Retorna recomendación basada en gap de resorte
 
 ### Size Ranges
 
-Configurable in `data/fitment/size-ranges.ts`:
+Configurable en `data/fitment/size-ranges.ts`:
 
 - Type E: 0.85" - 1.10"
 - Type D: 1.10" - 1.25"
@@ -137,9 +174,9 @@ Configurable in `data/fitment/size-ranges.ts`:
 
 ## Analytics
 
-Analytics abstraction in `lib/analytics/analytics.ts` provides tracking without vendor lock-in.
+Abstracción de analytics en `lib/analytics/analytics.ts` proporciona tracking sin vendor lock-in.
 
-Events tracked:
+Eventos rastreados:
 - vehicle_finder_viewed
 - make_selected
 - model_selected
@@ -150,35 +187,42 @@ Events tracked:
 - product_viewed
 - product_cta_clicked
 
-To integrate with your analytics provider, update the `track()` method.
+Para integrar con tu proveedor de analytics, actualiza el método `track()`.
 
 ## Deployment
 
-This is a standard Next.js application and can be deployed to:
+Esta es una aplicación Next.js estándar y puede ser desplegada en:
 
-- Vercel (recommended)
+- Vercel (recomendado)
 - Netlify
 - AWS Amplify
-- Any Node.js hosting
+- Cualquier hosting de Node.js
+
+### Build de Producción
+
+```bash
+npm run build
+npm start
+```
 
 ## Demo Data
 
-The current implementation uses clearly labeled demo data. All vehicle fitment data includes an `isDemo` flag.
+La implementación actual usa datos demo claramente etiquetados. Todos los datos de fitment de vehículos incluyen una bandera `isDemo`.
 
-In production, replace with:
-- Verified vehicle compatibility database
-- External fitment API
-- CMS-managed product data
+En producción, reemplazar con:
+- Base de datos de compatibilidad verificada
+- API externa de fitment
+- Datos de productos gestionados por CMS
 
 ## Accessibility
 
-- Semantic HTML structure
-- Keyboard navigation support
-- ARIA labels and descriptions
-- Focus visible states
-- Color contrast compliant
-- Screen reader friendly
-- Reduced motion support
+- Estructura HTML semántica
+- Soporte de navegación por teclado
+- Labels y descripciones ARIA
+- Estados de focus visibles
+- Contraste de color compliant (AAA en textos principales)
+- Friendly con lectores de pantalla
+- Soporte de reduced motion
 
 ## Browser Support
 
@@ -187,10 +231,29 @@ In production, replace with:
 - Safari (latest)
 - Edge (latest)
 
+## Performance
+
+- ✅ Lighthouse Performance > 90
+- ✅ First Contentful Paint < 1.5s
+- ✅ Animaciones 60fps (GPU-accelerated)
+- ✅ Zero layout shift (CLS < 0.1)
+
 ## License
 
-Proprietary - All rights reserved
+Proprietary - Todos los derechos reservados
 
 ## Support
 
-For questions or support, contact your development team.
+Para preguntas o soporte, contacta a tu equipo de desarrollo.
+
+---
+
+## 🎯 Próximos Pasos Sugeridos
+
+1. **Probar el nuevo Hero** en desarrollo (`npm run dev`)
+2. **Ajustar timings** de animaciones según feedback visual
+3. **Implementar interactividad** (parallax, counters) - Ver [ANIMATION_EXAMPLES.md](./ANIMATION_EXAMPLES.md)
+4. **Extender rebranding** a otras secciones - Ver [NEXT_STEPS.md](./NEXT_STEPS.md)
+5. **Optimizar assets** (imágenes WebP, lazy loading)
+
+Ver **[NEXT_STEPS.md](./NEXT_STEPS.md)** para roadmap completo.

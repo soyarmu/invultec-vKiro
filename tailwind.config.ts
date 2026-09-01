@@ -12,13 +12,14 @@ const config: Config = {
         // Corporate Colors: Intense Red, Black, Grey
         brand: {
           red: {
-            DEFAULT: '#DC0000',
+            DEFAULT: '#E31E24',
+            dark: '#A81419',
             50: '#FFE5E5',
             100: '#FFB8B8',
             200: '#FF8A8A',
             300: '#FF5C5C',
             400: '#FF2E2E',
-            500: '#DC0000',
+            500: '#E31E24',
             600: '#B00000',
             700: '#840000',
             800: '#580000',
@@ -51,19 +52,20 @@ const config: Config = {
             900: '#1A1B1E',
           },
         },
-        // Neutral Palette
+        // Neutral Palette (matching rebranding design)
         neutral: {
+          0: '#FFFFFF',
           50: '#FAFAFA',
-          100: '#F5F5F5',
+          100: '#F4F3EE',
           200: '#E5E5E5',
-          300: '#D4D4D4',
-          400: '#A3A3A3',
-          500: '#737373',
+          300: '#C7C5BB',
+          400: '#A3A199',
+          500: '#78766F',
           600: '#525252',
           700: '#404040',
-          800: '#262626',
-          900: '#171717',
-          950: '#0A0A0A',
+          800: '#2B2B29',
+          900: '#171716',
+          950: '#0E0E0E',
         },
         // Semantic Colors
         success: {
@@ -84,7 +86,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Oswald', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       fontSize: {
         // Precise typography scale
@@ -128,6 +131,15 @@ const config: Config = {
         'slide-up': 'slideUp 0.4s ease-out',
         'slide-down': 'slideDown 0.4s ease-out',
         'scale-in': 'scaleIn 0.2s ease-out',
+        // Rebranding animations
+        'bg-in': 'bgIn 1.1s ease-out forwards',
+        'grid-in': 'gridIn 1s ease-out 3s forwards',
+        'impact-in': 'impactIn 0.9s cubic-bezier(.2,.8,.25,1) 2s forwards',
+        'ring-pulse': 'ringPulse 4.5s ease-in-out infinite',
+        'product-in': 'productIn 1s cubic-bezier(.16,.9,.3,1) 1s forwards',
+        'idle-float': 'idleFloat 6s ease-in-out 2s infinite',
+        'tick-in': 'tickIn 0.6s ease-out forwards',
+        'content-in': 'contentIn 0.9s ease-out 0.35s forwards',
       },
       keyframes: {
         fadeIn: {
@@ -145,6 +157,39 @@ const config: Config = {
         scaleIn: {
           '0%': { transform: 'scale(0.95)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        // Rebranding keyframes
+        bgIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        gridIn: {
+          from: { opacity: '0' },
+          to: { opacity: '0.35' },
+        },
+        impactIn: {
+          from: { opacity: '0', transform: 'translate(0, -50%) scale(0.85)' },
+          to: { opacity: '1', transform: 'translate(0, -50%) scale(1)' },
+        },
+        ringPulse: {
+          '0%, 100%': { opacity: '0.55', transform: 'scale(1)' },
+          '50%': { opacity: '0.18', transform: 'scale(1.06)' },
+        },
+        productIn: {
+          from: { opacity: '0', transform: 'translateX(40px) scale(0.94)' },
+          to: { opacity: '1', transform: 'translateX(0) scale(1)' },
+        },
+        idleFloat: {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '50%': { transform: 'translateY(-8px) rotate(0.6deg)' },
+        },
+        tickIn: {
+          from: { opacity: '0', transform: 'translateY(6px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        contentIn: {
+          from: { opacity: '0', transform: 'translateY(14px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },
