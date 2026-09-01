@@ -9,21 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Corporate Colors: Intense Red, Black, Grey
+        // Corporate Colors: Elegant Carmine Red, Black, Grey
         brand: {
           red: {
-            DEFAULT: '#E31E24',
-            dark: '#A81419',
-            50: '#FFE5E5',
-            100: '#FFB8B8',
-            200: '#FF8A8A',
-            300: '#FF5C5C',
-            400: '#FF2E2E',
-            500: '#E31E24',
-            600: '#B00000',
-            700: '#840000',
-            800: '#580000',
-            900: '#2C0000',
+            DEFAULT: '#C0262D',
+            dark: '#8B1E23',
+            50: '#FDF2F2',
+            100: '#FDE8E8',
+            200: '#FBD5D5',
+            300: '#F8B4B4',
+            400: '#F05252',
+            500: '#C0262D',
+            600: '#9B1C1C',
+            700: '#771D1D',
+            800: '#551B1B',
+            900: '#311313',
           },
           black: {
             DEFAULT: '#0A0A0A',
@@ -123,7 +123,7 @@ const config: Config = {
         'md': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
         'lg': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
         'xl': '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
-        'red': '0 10px 30px -5px rgb(220 0 0 / 0.3)',
+        'red': '0 10px 30px -5px rgb(192 38 45 / 0.25)',
         'inner': 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
       },
       animation: {

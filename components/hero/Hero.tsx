@@ -113,7 +113,7 @@ export function Hero() {
             cy="320"
             r="120"
             fill="none"
-            stroke="#E31E24"
+            stroke="#C0262D"
             strokeOpacity="0.55"
             strokeWidth="1"
             strokeDasharray="2 6"
@@ -125,7 +125,7 @@ export function Hero() {
             cy="320"
             r="200"
             fill="none"
-            stroke="#E31E24"
+            stroke="#C0262D"
             strokeOpacity="0.55"
             strokeWidth="1"
             strokeDasharray="2 8"
@@ -137,7 +137,7 @@ export function Hero() {
             cy="320"
             r="280"
             fill="none"
-            stroke="#E31E24"
+            stroke="#C0262D"
             strokeOpacity="0.55"
             strokeWidth="1"
             strokeDasharray="2 10"
@@ -149,7 +149,7 @@ export function Hero() {
             y1="10"
             x2="320"
             y2="60"
-            stroke="#E31E24"
+            stroke="#C0262D"
             strokeWidth="1"
             opacity="0.5"
           />
@@ -158,7 +158,7 @@ export function Hero() {
             y1="580"
             x2="320"
             y2="630"
-            stroke="#E31E24"
+            stroke="#C0262D"
             strokeWidth="1"
             opacity="0.5"
           />
@@ -167,7 +167,7 @@ export function Hero() {
             y1="320"
             x2="60"
             y2="320"
-            stroke="#E31E24"
+            stroke="#C0262D"
             strokeWidth="1"
             opacity="0.5"
           />
@@ -176,7 +176,7 @@ export function Hero() {
             y1="320"
             x2="630"
             y2="320"
-            stroke="#E31E24"
+            stroke="#C0262D"
             strokeWidth="1"
             opacity="0.5"
           />
@@ -214,7 +214,7 @@ export function Hero() {
           <span
             className="font-display font-bold text-transparent text-[0.32em] align-top"
             style={{
-              WebkitTextStroke: '1.5px #E31E24',
+              WebkitTextStroke: '1.5px #C0262D',
             }}
           >
             R
@@ -293,7 +293,7 @@ export function Hero() {
           <circle cx="190" cy="115" r="6" fill="#050505" />
 
           {/* Shock wave lines */}
-          <g stroke="#E31E24" strokeWidth="4" fill="none" opacity="0.9">
+          <g stroke="#C0262D" strokeWidth="4" fill="none" opacity="0.9">
             <path d="M60 150 C90 160, 70 190, 100 200 C130 210, 110 240, 140 250" />
             <path d="M220 150 C250 160, 230 190, 260 200 C290 210, 270 240, 300 250" />
           </g>
@@ -329,7 +329,7 @@ export function Hero() {
             fill="#101010"
             stroke="#2E2E2B"
           />
-          <rect x="132" y="270" width="56" height="10" fill="#E31E24" />
+          <rect x="132" y="270" width="56" height="10" fill="#C0262D" />
 
           {/* Bottom mount */}
           <circle cx="160" cy="390" r="10" fill="#0A0A0A" stroke="#3A3A37" />
