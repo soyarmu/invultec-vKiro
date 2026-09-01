@@ -2,34 +2,34 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Amortiguadores de Resorte de Bobina | Encuentra Tu Ajuste Perfecto',
+  title: 'Rubber Shock | Encuentra Tu Ajuste Perfecto',
   description:
-    'Encuentra el amortiguador de resorte correcto para tu vehículo. Ingresa la marca, modelo y año para obtener recomendaciones específicas. Disponible en múltiples tamaños.',
+    'Encuentra el Rubber Shock correcto para tu vehículo. Ingresa la marca, modelo y año para obtener recomendaciones específicas. Disponible en múltiples tamaños.',
   keywords: [
-    'amortiguador de resorte',
+    'rubber shock',
+    'tope de suspensión',
     'buffer de resorte automotriz',
     'amortiguador de suspensión',
     'espaciador de resorte',
-    'tope de resorte',
+    'tope de resorte helicoidal',
     'ajuste vehicular',
-    'buffer de suspensión',
-    'amortiguador universal de resorte',
+    'invultec colombia',
   ],
-  authors: [{ name: 'Amortiguadores de Resorte' }],
+  authors: [{ name: 'Rubber Shock Invultec' }],
   openGraph: {
     type: 'website',
-    locale: 'es_ES',
-    url: 'https://example.com',
-    title: 'Amortiguadores de Resorte de Bobina | Encuentra Tu Ajuste Perfecto',
+    locale: 'es_CO',
+    url: 'https://invultec.com',
+    title: 'Rubber Shock | Encuentra Tu Ajuste Perfecto',
     description:
-      'Encuentra el amortiguador de resorte correcto para tu vehículo. Recomendaciones específicas basadas en marca, modelo y año.',
-    siteName: 'Amortiguadores de Resorte',
+      'Encuentra el Rubber Shock correcto para tu vehículo. Recomendaciones específicas basadas en marca, modelo y año.',
+    siteName: 'Rubber Shock Invultec',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Amortiguadores de Resorte de Bobina | Encuentra Tu Ajuste Perfecto',
+    title: 'Rubber Shock | Encuentra Tu Ajuste Perfecto',
     description:
-      'Encuentra el amortiguador de resorte correcto para tu vehículo. Recomendaciones específicas para tu vehículo.',
+      'Encuentra el Rubber Shock correcto para tu vehículo. Recomendaciones específicas para tu vehículo.',
   },
   robots: {
     index: true,

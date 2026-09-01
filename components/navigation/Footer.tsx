@@ -25,7 +25,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-4 max-w-md text-sm text-neutral-400">
-              Especialistas en amortiguadores de resorte Rubber Shock RS-001 de alta resistencia para todo tipo de vehículos en Colombia. Protege tu suspensión, mejora el confort y viaja con total tranquilidad.
+              Especialistas en Rubber Shock de alta resistencia para la suspensión de todo tipo de vehículos en Colombia. Protege tu suspensión, mejora el confort y viaja con total tranquilidad.
             </p>
           </div>
 

@@ -48,25 +48,25 @@ export function Navbar() {
               className="flex items-center gap-2 text-xl font-bold text-neutral-900 hover:text-brand-red transition-colors"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-red">
-                <span className="text-lg font-bold text-white">AR</span>
+                <span className="text-lg font-bold text-white">RS</span>
               </div>
-              <span className="hidden sm:inline">Amortiguadores de Resorte</span>
+              <span className="hidden sm:inline">Rubber Shock</span>
             </button>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 md:flex">
             <button
-              onClick={() => scrollToSection('how-it-works')}
-              className="text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
-            >
-              Cómo Funciona
-            </button>
-            <button
               onClick={scrollToFinder}
               className="text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
             >
               Encuentra Tu Ajuste
+            </button>
+            <button
+              onClick={() => scrollToSection('how-it-works')}
+              className="text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
+            >
+              Cómo Funciona
             </button>
             <button
               onClick={() => scrollToSection('faq')}
@@ -104,16 +104,16 @@ export function Navbar() {
           <div className="container-custom py-4">
             <div className="flex flex-col gap-4">
               <button
-                onClick={() => scrollToSection('how-it-works')}
-                className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
-              >
-                Cómo Funciona
-              </button>
-              <button
                 onClick={scrollToFinder}
                 className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
               >
                 Encuentra Tu Ajuste
+              </button>
+              <button
+                onClick={() => scrollToSection('how-it-works')}
+                className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
+              >
+                Cómo Funciona
               </button>
               <button
                 onClick={() => scrollToSection('faq')}

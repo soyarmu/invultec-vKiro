@@ -46,7 +46,7 @@ export function MeasurementInput({
               Mide el Espacio de Tu Resorte
             </h4>
             <p className="mt-1 text-sm text-neutral-600">
-              Mide el espacio entre las bobinas de tu resorte cuando el vehículo
+              Mide el espacio entre las espiras de tu resorte helicoidal cuando el vehículo
               está en reposo. Usa una regla o calibrador para mayor precisión.
             </p>
           </div>
