@@ -10,74 +10,71 @@ export function MeasurementGuide() {
               <Ruler className="h-8 w-8 text-brand-red" aria-hidden="true" />
             </div>
             <h2 className="mt-6 text-3xl font-bold text-neutral-900 sm:text-4xl">
-              Cómo Medir el Espacio de Tu Resorte
+              Guía Técnica: Cómo Medir la Separación del Resorte
             </h2>
             <p className="mt-4 text-lg text-neutral-600">
-              Una medida rápida asegura que ordenes el tamaño correcto
+              Si tu vehículo tiene suspensión adaptada o no aparece en el listado, mide la distancia entre espiras para confirmarte la referencia perfecta.
             </p>
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {/* Visual Placeholder */}
+            {/* Diagrama Visual */}
             <div className="order-2 flex items-center justify-center md:order-1">
-              <div className="relative aspect-square w-full max-w-md rounded-lg bg-neutral-100 p-8">
-                <div className="flex h-full items-center justify-center">
-                  <div className="text-center">
-                    <Ruler className="mx-auto h-24 w-24 text-neutral-300" aria-hidden="true" />
-                    <p className="mt-4 text-sm text-neutral-500">
-                      Diagrama técnico de medición
-                    </p>
-                  </div>
+              <div className="relative aspect-square w-full max-w-md rounded-2xl bg-neutral-100 p-8 border border-neutral-200 shadow-inner flex items-center justify-center text-center">
+                <div>
+                  <Ruler className="mx-auto h-24 w-24 text-neutral-400 mb-3" aria-hidden="true" />
+                  <p className="text-base font-bold text-neutral-800">
+                    Espacio de Separación de Espiras
+                  </p>
+                  <p className="mt-1 text-xs text-neutral-500">
+                    Medición de la distancia vertical en reposo
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Instructions */}
+            {/* Instrucciones */}
             <div className="order-1 flex flex-col justify-center md:order-2">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-900">
-                    Qué Medir
+                  <h3 className="text-lg font-bold text-neutral-900">
+                    1. ¿Qué se mide?
                   </h3>
-                  <p className="mt-2 text-neutral-600">
-                    Mide el espacio entre las bobinas de tu resorte cuando el
-                    vehículo está en reposo sobre terreno nivelado.
+                  <p className="mt-1 text-neutral-600">
+                    Mide la luz o espacio libre entre dos espiras adyacentes del resorte helicoidal cuando el vehículo está apoyado en el suelo.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-900">
-                    Dónde Medir
+                  <h3 className="text-lg font-bold text-neutral-900">
+                    2. ¿Dónde se ubica el resorte?
                   </h3>
-                  <p className="mt-2 text-neutral-600">
-                    Localiza el resorte de bobina en la suspensión de tu vehículo&apos;s.
-                    Típicamente se encuentra en el eje trasero para la mayoría de las aplicaciones.
+                  <p className="mt-1 text-neutral-600">
+                    En la mayoría de automóviles y camionetas en Colombia, el resorte helicoidal está instalado en el eje trasero o amortiguador delantero.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-900">
-                    Cómo Medir
+                  <h3 className="text-lg font-bold text-neutral-900">
+                    3. ¿Cómo tomar la medida?
                   </h3>
-                  <p className="mt-2 text-neutral-600">
-                    Usa una regla o calibrador para medir la distancia entre dos
-                    bobinas adyacentes. Mide en pulgadas para mejor precisión.
+                  <p className="mt-1 text-neutral-600">
+                    Utiliza una regla graduada en milímetros o un calibrador. Anota la medida exacta y compártela a nuestro asesor por WhatsApp.
                   </p>
                 </div>
 
-                <div className="rounded-lg border-2 border-warning bg-warning-light p-4">
+                <div className="rounded-xl border border-amber-300 bg-amber-50 p-4">
                   <div className="flex gap-3">
                     <AlertCircle
-                      className="h-5 w-5 flex-shrink-0 text-warning-dark"
+                      className="h-5 w-5 flex-shrink-0 text-amber-700"
                       aria-hidden="true"
                     />
                     <div>
-                      <p className="text-sm font-medium text-warning-dark">
-                        Importante
+                      <p className="text-sm font-bold text-amber-800">
+                        Nota Importante
                       </p>
-                      <p className="mt-1 text-sm text-neutral-700">
-                        Mide con el vehículo sin carga y sobre terreno nivelado
-                        para obtener la lectura más precisa.
+                      <p className="mt-1 text-sm text-amber-900">
+                        Realiza la medición con el vehículo en terreno plano, sin personas a bordo y sin carga en el baúl para garantizar la máxima precisión.
                       </p>
                     </div>
                   </div>

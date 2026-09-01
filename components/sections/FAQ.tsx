@@ -6,34 +6,34 @@ import { cn } from '@/lib/utils';
 
 const faqs = [
   {
-    question: 'Will this fit my car?',
+    question: '¿Le servirá el Rubber Shock RS-001 a mi vehículo?',
     answer:
-      "Use our vehicle fitment finder above to check compatibility. Simply enter your make, model, and year, and we'll recommend the right size. If your vehicle isn't listed, you can measure your spring gap to determine the correct type.",
+      'Usa nuestro buscador de compatibilidad vehicular en esta página. Selecciona tu marca, modelo y año para conocer la disponibilidad. Si tu vehículo no aparece o tiene la suspensión modificada, nuestros asesores técnicos de Invultec te atenderán directamente por WhatsApp para confirmarte la medida exacta.',
   },
   {
-    question: 'How do I know which size I need?',
+    question: '¿Qué beneficios le aporta a la suspensión de mi carro?',
     answer:
-      'Our fitment tool will recommend the correct size based on your vehicle. Each size is designed for a specific spring gap range. If you prefer to measure yourself, refer to our measurement guide for instructions.',
+      'El Rubber Shock RS-001 absorbe hasta un 95% de los golpes fuertes al pasar por huecos o resaltos, evita que el vehículo se agache por el peso de carga o pasajeros, mejora la estabilidad en curvas y prolonga la vida útil de tus amortiguadores originales.',
   },
   {
-    question: 'Do I need to measure my spring?',
+    question: '¿Cuántas unidades vienen en cada paquete?',
     answer:
-      'Not always. If your vehicle is in our compatibility database, we can recommend the right size automatically. However, measuring your spring gap is recommended if your vehicle has aftermarket suspension or if you want to verify the fit.',
+      'Cada kit Rubber Shock RS-001 incluye un par (2 unidades de hule uretano reforzado) listo para ser instalado en un eje de tu vehículo.',
   },
   {
-    question: 'How many pieces are included?',
+    question: '¿Requiere modificar la suspensión para instalarlo?',
     answer:
-      'Each pack includes 2 coil spring buffers, suitable for one axle (typically rear). Most installations require one pack per vehicle.',
+      'No. La instalación es 100% reversible y no altera, corta ni modifica ninguna pieza original del vehículo ni invalida la garantía de la suspensión.',
   },
   {
-    question: "What if my vehicle isn't listed?",
+    question: '¿Es difícil de instalar?',
     answer:
-      'You can still find the right size by measuring your spring gap. Follow our measurement guide to take an accurate measurement, then use the measurement tool to find your recommended size.',
+      'No requiere herramientas especializadas. Se instala directamente entre las espiras del resorte helicoidal cuando el vehículo está elevado o en reposo. Enviarás un mensaje a WhatsApp y te adjuntaremos el manual visual de instalación paso a paso.',
   },
   {
-    question: 'Can I use these on front or rear springs?',
+    question: '¿Hacen envíos a toda Colombia?',
     answer:
-      "These buffers are most commonly used on rear coil springs. Check your vehicle's spring gap and compare it to the product specifications to ensure proper fit.",
+      'Sí, realizamos envíos seguros a nivel nacional a todas las ciudades y municipios de Colombia con soporte y seguimiento directo de Invultec.',
   },
 ];
 
@@ -50,10 +50,10 @@ export function FAQ() {
         <div className="mx-auto max-w-3xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-neutral-900 sm:text-4xl">
-              Frequently Asked Questions
+              Preguntas Frecuentes
             </h2>
             <p className="mt-4 text-lg text-neutral-600">
-              Everything you need to know about finding the right fit
+              Resuelve tus dudas sobre el amortiguador de resorte Rubber Shock RS-001 de Invultec Colombia
             </p>
           </div>
 

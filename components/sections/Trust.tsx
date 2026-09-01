@@ -3,40 +3,40 @@ import { CheckCircle, Info, Headphones, Package } from 'lucide-react';
 const trustPoints = [
   {
     icon: CheckCircle,
-    title: 'Know what fits before you order',
+    title: 'Compatibilidad Exacta',
     description:
-      'Our fitment tool helps you select the right size based on your specific vehicle.',
+      'Nuestro sistema verifica la medida adecuada según la marca, modelo y año de tu vehículo.',
   },
   {
     icon: Info,
-    title: 'Clear sizing information',
+    title: 'Especificaciones Transparentes',
     description:
-      'Transparent spring gap ranges and compatibility data for each product type.',
+      'Datos técnicos claros y rango de separación de espira para la máxima tranquilidad en tu compra.',
   },
   {
     icon: Package,
-    title: 'Ready to install',
+    title: 'Kits Listos para Instalar',
     description:
-      'Complete kits with everything you need, shipped directly to you.',
+      'Paquetes completos con 2 amortiguadores de hule uretano Rubber Shock RS-001 de alta durabilidad.',
   },
   {
     icon: Headphones,
-    title: 'Customer support',
+    title: 'Asesoría Especializada WhatsApp',
     description:
-      'Questions about fitment? Our team is here to help you find the right size.',
+      '¿Tienes dudas sobre la medida? Nuestros asesores técnicos de Invultec Colombia te guían en tiempo real.',
   },
 ];
 
 export function Trust() {
   return (
-    <section className="bg-gradient-to-br from-neutral-900 to-brand-black-800 py-16 sm:py-20">
+    <section className="bg-gradient-to-br from-neutral-900 to-neutral-800 py-16 sm:py-20">
       <div className="container-custom">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
-            Know What Fits Before You Order
+            Compatibilidad Garantizada Antes de Comprar
           </h2>
           <p className="mt-4 text-lg text-neutral-300">
-            We&apos;re committed to helping you find the right size for your vehicle
+            Nos aseguramos de que recibas la medida exacta para proteger la suspensión de tu auto en las vías de Colombia.
           </p>
         </div>
 
