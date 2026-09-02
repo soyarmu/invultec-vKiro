@@ -1,259 +1,167 @@
-# Invultec - RubberShock Landing Page
+# Invultec Colombia — Rubber Shock RS-001 Landing Page & Lead Capture
 
-Una landing page premium de alto rendimiento para RubberShock, el tope de suspensión en caucho neopreno, construida con Next.js, TypeScript y Tailwind CSS.
-
-## 🎨 Rebranding 2026
-
-**Nueva estética industrial/técnica** con sistema de animaciones por capas que cuenta una historia visual:
-
-- ✨ **6 capas animadas** con timeline secuencial (0-5s)
-- 🎭 **Animaciones CSS nativas** (GPU-accelerated, 60fps)
-- 🎨 **Paleta actualizada**: Rojo Invultec (#E31E24) + escala de grises refinada
-- 🔤 **Triple tipografía**: Oswald (display) + Inter (body) + JetBrains Mono (técnico)
-- 📱 **100% responsive** con animaciones adaptativas
-- ♿ **Accesibilidad completa** (WCAG 2.1 AA, prefers-reduced-motion)
-
-### 📚 Documentación del Rebranding
-
-- **[REBRANDING_GUIDE.md](./REBRANDING_GUIDE.md)** - Sistema completo de diseño y animaciones
-- **[ANIMATION_EXAMPLES.md](./ANIMATION_EXAMPLES.md)** - Ejemplos de extensiones avanzadas
-- **[NEXT_STEPS.md](./NEXT_STEPS.md)** - Roadmap y próximas mejoras
+Una landing page interactiva de alto rendimiento con motor de compatibilidad vehicular, captura server-side de leads en **Supabase** y canal de ventas directo por **WhatsApp** para el producto **Rubber Shock RS-001** de Invultec Colombia.
 
 ---
 
-## Features
+## 📑 Especificaciones del Proyecto (`specs/`)
 
-- **Vehicle Fitment Finder**: Herramienta interactiva que recomienda el producto correcto basándose en marca, modelo y año del vehículo
-- **Measurement Fallback**: Flujo alternativo para vehículos no registrados en la base de datos
-- **Premium Design**: Estética industrial técnica con grillas, remaches y diagramas de impacto
-- **Responsive**: Diseño mobile-first con experiencia óptima en todos los dispositivos
-- **Accessible**: Implementación WCAG-friendly con navegación por teclado y soporte de lectores de pantalla
-- **SEO Optimized**: Metadata apropiada y estructura HTML semántica
-- **Analytics Ready**: Capa de analytics abstracta lista para integración
+Toda la evolución y arquitectura del proyecto está documentada mediante especificaciones técnicas numeradas:
 
-## Tech Stack
+| Spec | Nombre | Estado | Descripción |
+| :--- | :--- | :---: | :--- |
+| **[SPEC 00](./specs/00-arquitectura-base-stack-html-js.md)** | Arquitectura Base, Stack y Frontend | `Implementado` | Definición de la arquitectura Next.js 14, jerarquía de componentes HTML/React, motor de compatibilidad y sistema de diseño Tailwind. |
+| **[SPEC 01](./specs/01-lead-capture-rubber-shock.md)** | Captura de Leads & Backend | `Implementado` | Dataset de 20 marcas líderes en Colombia, API Route Server-Side `/api/leads` con Rate Limiting, Honeypot anti-bot y tabla `public.leads`. |
+| **[SPEC 02](./specs/02-traduccion-y-marketing-invultec.md)** | Traducción & Marketing | `Implementado` | Traducción 100% al español y optimización del copy comercial para el mercado colombiano (Trust, FAQ, CTA, Footer, Guía de medición). |
+| **[SPEC 03](./specs/03-actualizacion-terminologia-rubber-shock.md)** | Terminología Rubber Shock | `Implementado` | Estandarización de términos técnicos de marca: *Rubber Shock RS-001*, *resortes helicoidales* y *hule uretano de alta resistencia*. |
+| **[SPEC 04](./specs/04-conexion-supabase.md)** | Verificación Conexión Supabase | `Implementado` | Configuración y verificación del cliente Supabase en `lib/supabase.ts`, variables `.env.local` y endpoint de health check (`/api/health/supabase`). |
+| **[SPEC 05](./specs/05-creacion-primer-lead-y-redireccion-whatsapp.md)** | Primer Lead E2E & WhatsApp | `Implementado` | Script de migración SQL `supabase/migrations/20260902_create_leads_table.sql`, RLS, prueba E2E en BD y redirección a WhatsApp. |
 
-- **Next.js 14** - App Router con Server Components
-- **TypeScript** - Desarrollo type-safe
-- **Tailwind CSS** - Sistema de diseño personalizado con animaciones nativas
-- **Lucide React** - Sistema de iconos consistente
-- **React 18** - Arquitectura de componentes con hooks
+---
 
-## Project Structure
+## 🛠️ Stack Tecnológico
+
+- **Frontend & Renderizado**: [Next.js 14](https://nextjs.org/) (App Router, Server Components y Client Components)
+- **Lenguaje**: [TypeScript 5.4](https://www.typescriptlang.org/) con tipado estricto
+- **Estilos & UI**: [Tailwind CSS 3.4](https://tailwindcss.com/) con sistema de tokens corporativos (Rojo Carmesí `#C0262D`, Negro `#0A0A0A`, Gris `#71727A`)
+- **Base de Datos & Backend (BaaS)**: [Supabase](https://supabase.com/) (`@supabase/supabase-js` 2.x) con Row Level Security (RLS)
+- **Iconografía**: [Lucide React](https://lucide.dev/) (Iconos vectoriales automotrices y de UI)
+- **Integraciones**: Canal de ventas directo vía WhatsApp (`wa.me`)
+
+---
+
+## ✨ Características Principales (Features)
+
+1. **Buscador de Compatibilidad Vehicular (Fitment Finder)**:
+   - Algoritmo de recomendación dinámica de Rubber Shock (Tipos A+, B+, C, D, E) según marca, modelo y año (cobertura 2000-2026 para 20 marcas líderes en Colombia).
+   - Modo de medición manual para ingresar la separación de espiras del resorte helicoidal en mm o pulgadas.
+2. **Formulario de Captura Server-Side & Anti-Bot**:
+   - Validación estricta de celular colombiano de 10 dígitos (iniciando en 3).
+   - Campo Honeypot `hp` para simular éxito sin sobrecargar la BD si es un bot.
+   - Rate Limiter en memoria (máximo 5 peticiones por minuto por IP).
+   - Persistencia segura en la tabla `public.leads` de Supabase.
+   - Redirección automática a WhatsApp mediante `window.location.href` evitando bloqueos de popups.
+3. **Copy de Marketing Adaptado a Colombia**:
+   - Contenido 100% en español con terminología automotriz local (*resortes helicoidales*, *hule uretano*, *separación entre espiras*).
+   - Sección de confianza con 4 pilares Invultec, FAQ con acordeón interactivo y llamados a la acción de alta conversión.
+
+---
+
+## 📂 Estructura del Proyecto
 
 ```
-├── app/
-│   ├── layout.tsx          # Layout raíz con metadata
-│   ├── page.tsx            # Landing page principal
-│   ├── globals.css         # Estilos globales y tokens de diseño
-│   └── rebranding.html     # Referencia de diseño original
-├── components/
-│   ├── ui/                 # Componentes UI reutilizables
-│   ├── hero/               # Hero section (REBRANDEADO ✨)
-│   ├── fitment/            # Componentes del fitment finder
-│   ├── product/            # Componentes de visualización de producto
-│   ├── sections/           # Secciones de la landing page
-│   └── navigation/         # Nav y Footer
-├── lib/
-│   ├── fitment/            # Lógica del motor de fitment
-│   ├── analytics/          # Abstracción de analytics
-│   └── utils.ts            # Funciones utilitarias
-├── data/
-│   ├── fitment/            # Datos de compatibilidad de vehículos
-│   └── products/           # Catálogo de productos
-├── types/                  # Definiciones de tipos TypeScript
-└── public/
-    └── images/             # Imágenes de productos
+invultec-vKiro/
+├── app/                      # Next.js App Router
+│   ├── api/                  # API Routes (leads, health check)
+│   │   ├── health/           # Health check de conexión a Supabase
+│   │   └── leads/            # Endpoint POST de captura de leads
+│   ├── globals.css           # Importaciones de Tailwind y estilos globales
+│   ├── layout.tsx            # Root Layout HTML con SEO y Metadata
+│   └── page.tsx              # Landing Page principal
+├── components/               # Componentes UI divididos por módulo
+│   ├── fitment/              # Buscador vehicular, resultados y captura de leads
+│   ├── hero/                 # Banner Hero principal
+│   ├── navigation/           # Navbar superior y Footer
+│   ├── product/              # Tarjetas de visualización de producto
+│   ├── sections/             # Secciones (WhyThisProduct, HowItWorks, MeasurementGuide, Trust, FAQ, FinalCTA)
+│   └── ui/                   # Primitivas de interfaz (Button, Input, Select, Badge)
+├── data/                     # Datasets de vehículos, tamaños y productos
+│   ├── fitment/              # Rangos de espiras y base de datos vehicular
+│   ├── products/             # Catálogo de referencias Rubber Shock (RS-001)
+│   └── vehicles.json         # Dataset con 20 marcas principales en Colombia
+├── lib/                      # Lógica de negocio e integraciones
+│   ├── analytics/            # Abstracción de eventos de tracking
+│   ├── fitment/              # Motor de cálculo de compatibilidad vehicular
+│   ├── supabase.ts           # Cliente singleton de Supabase (Público y Admin)
+│   └── utils.ts              # Utilidad cn() para clases Tailwind
+├── specs/                    # Especificaciones técnicas (SPECs 00-05)
+├── supabase/                 # Migraciones SQL y esquemas de base de datos
+│   └── migrations/           # Scripts DDL (20260902_create_leads_table.sql)
+└── types/                    # Definiciones de tipos TypeScript
 ```
 
-## Getting Started
+---
 
-### Prerequisites
+## 🗄️ Base de Datos & Migraciones Supabase
 
+La tabla `public.leads` almacena los contactos de clientes interesados en el Rubber Shock RS-001:
+
+```sql
+CREATE TABLE IF NOT EXISTS public.leads (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  brand TEXT NOT NULL,
+  model TEXT NOT NULL,
+  year TEXT NOT NULL,
+  quantity INTEGER DEFAULT 1 NOT NULL,
+  converted_to_wa BOOLEAN DEFAULT true NOT NULL,
+  status TEXT DEFAULT 'pending' NOT NULL
+);
+
+ALTER TABLE public.leads ENABLE ROW LEVEL SECURITY;
+```
+
+Los scripts de migración se encuentran en `supabase/migrations/20260902_create_leads_table.sql`.
+
+---
+
+## 🚀 Guía de Inicio Rápido (Getting Started)
+
+### Requisitos Previos
 - Node.js 18+ o 20+
-- npm, yarn, o pnpm
+- npm, pnpm o yarn
 
-### Installation
-
-1. Instalar dependencias:
+### 1. Instalación de Dependencias
 
 ```bash
 npm install
 ```
 
-2. Agregar imágenes de productos a `public/images/`:
-   - product-buffer-e.jpg
-   - product-buffer-d.jpg
-   - product-buffer-c.jpg
-   - product-buffer-b-plus.jpg
-   - product-buffer-a-plus.jpg
+### 2. Configuración de Variables de Entorno (`.env.local`)
 
-3. Ejecutar el servidor de desarrollo:
+Crea o edita el archivo `.env.local` en la raíz del proyecto basándote en `.env.local.example`:
+
+```env
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL="https://xkpnllrmwvnsdyjqklqn.supabase.co"
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY="tu-publishable-key"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="tu-anon-key"
+SUPABASE_SERVICE_ROLE_KEY="tu-service-role-key"
+
+# WhatsApp Business Sales Channel
+NEXT_PUBLIC_WHATSAPP_NUMBER="573172130907"
+```
+
+### 3. Servidor de Desarrollo
 
 ```bash
 npm run dev
 ```
 
-4. Abrir [http://localhost:3000](http://localhost:3000)
-
-## Build
-
-```bash
-npm run build
-npm start
-```
-
-## Lint
-
-```bash
-npm run lint
-```
-
-## Design System
-
-### Colors (Actualizado 2026)
-
-- **Brand Red**: `#E31E24` - CTA primario, acentos, estados seleccionados
-- **Brand Red Dark**: `#A81419` - Hover/Active states
-- **Neutral 950**: `#0E0E0E` - Fondo principal oscuro
-- **Neutral 900**: `#171716` - Fondo secundario
-- **Neutral 800**: `#2B2B29` - Bordes
-- **Neutral 500**: `#78766F` - Elementos metálicos (remaches)
-- **Neutral 400**: `#A3A199` - Texto secundario
-- **Neutral 300**: `#C7C5BB` - Grilla técnica
-- **Neutral 100**: `#F4F3EE` - Texto principal
-- **Neutral 0**: `#FFFFFF` - Títulos
-
-### Typography
-
-- **Display**: Oswald (títulos, uppercase, bold)
-- **Body**: Inter (texto general, legible)
-- **Mono**: JetBrains Mono (etiquetas técnicas, specs)
-
-### Animaciones
-
-- **Sistema por capas**: 6 capas con timeline secuencial
-- **Performance**: GPU-accelerated, CSS nativo
-- **Accesibilidad**: Respeta `prefers-reduced-motion`
-- **Duración total**: 0-5s (entrada progresiva)
-
-Ver [REBRANDING_GUIDE.md](./REBRANDING_GUIDE.md) para detalles completos.
-
-### Components
-
-- Buttons: Primary (red cortado), Secondary (oscuro), Outline
-- Cards: Bordes sutiles neutral-800, backgrounds semi-transparentes
-- Inputs: Estados de focus claros, labels accesibles
-- Specs: Badges técnicos con font mono
-
-## Fitment System
-
-### Data Architecture
-
-El sistema de fitment está diseñado para ser reemplazable:
-
-- **Actual**: Datos demo locales en `data/fitment/vehicle-data.ts`
-- **Futuro**: Puede reemplazarse con REST API, base de datos, CMS, o API externa de fitment
-
-### Fitment Engine
-
-Lógica de negocio central en `lib/fitment/fitment-engine.ts`:
-
-- `getFitmentRecommendation(vehicle)` - Retorna recomendación basada en vehículo
-- `getFitmentFromMeasurement(measurement)` - Retorna recomendación basada en gap de resorte
-
-### Size Ranges
-
-Configurable en `data/fitment/size-ranges.ts`:
-
-- Type E: 0.85" - 1.10"
-- Type D: 1.10" - 1.25"
-- Type C: 1.25" - 1.45"
-- Type B+: 1.65" - 1.85"
-- Type A+: 2.60" - 3.50"
-
-## Analytics
-
-Abstracción de analytics en `lib/analytics/analytics.ts` proporciona tracking sin vendor lock-in.
-
-Eventos rastreados:
-- vehicle_finder_viewed
-- make_selected
-- model_selected
-- year_selected
-- fitment_check_started
-- fitment_match_found
-- measurement_required
-- product_viewed
-- product_cta_clicked
-
-Para integrar con tu proveedor de analytics, actualiza el método `track()`.
-
-## Deployment
-
-Esta es una aplicación Next.js estándar y puede ser desplegada en:
-
-- Vercel (recomendado)
-- Netlify
-- AWS Amplify
-- Cualquier hosting de Node.js
-
-### Build de Producción
-
-```bash
-npm run build
-npm start
-```
-
-## Demo Data
-
-La implementación actual usa datos demo claramente etiquetados. Todos los datos de fitment de vehículos incluyen una bandera `isDemo`.
-
-En producción, reemplazar con:
-- Base de datos de compatibilidad verificada
-- API externa de fitment
-- Datos de productos gestionados por CMS
-
-## Accessibility
-
-- Estructura HTML semántica
-- Soporte de navegación por teclado
-- Labels y descripciones ARIA
-- Estados de focus visibles
-- Contraste de color compliant (AAA en textos principales)
-- Friendly con lectores de pantalla
-- Soporte de reduced motion
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Performance
-
-- ✅ Lighthouse Performance > 90
-- ✅ First Contentful Paint < 1.5s
-- ✅ Animaciones 60fps (GPU-accelerated)
-- ✅ Zero layout shift (CLS < 0.1)
-
-## License
-
-Proprietary - Todos los derechos reservados
-
-## Support
-
-Para preguntas o soporte, contacta a tu equipo de desarrollo.
+Abre [http://localhost:3000](http://localhost:3000) en el navegador para ver la landing page.
 
 ---
 
-## 🎯 Próximos Pasos Sugeridos
+## 🧪 Verificación y Producción
 
-1. **Probar el nuevo Hero** en desarrollo (`npm run dev`)
-2. **Ajustar timings** de animaciones según feedback visual
-3. **Implementar interactividad** (parallax, counters) - Ver [ANIMATION_EXAMPLES.md](./ANIMATION_EXAMPLES.md)
-4. **Extender rebranding** a otras secciones - Ver [NEXT_STEPS.md](./NEXT_STEPS.md)
-5. **Optimizar assets** (imágenes WebP, lazy loading)
+### Verificación de Tipos y Linter
 
-Ver **[NEXT_STEPS.md](./NEXT_STEPS.md)** para roadmap completo.
+```bash
+npm run lint
+npx tsc --noEmit
+```
+
+### Compilación para Producción
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 📄 Licencia
+
+Proprietary — **Invultec Colombia**. Todos los derechos reservados.
