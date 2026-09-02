@@ -99,10 +99,10 @@ export function LeadCaptureForm() {
 
       setSuccess(true);
 
-      // Redirigir automáticamente a WhatsApp
+      // Redirigir automáticamente a WhatsApp (usando window.location.href para evitar bloqueadores de popups en móviles y escritorio)
       if (data.whatsappUrl) {
         setTimeout(() => {
-          window.open(data.whatsappUrl, '_blank', 'noopener,noreferrer');
+          window.location.href = data.whatsappUrl;
         }, 300);
       }
     } catch (err: any) {

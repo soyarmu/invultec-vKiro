@@ -1,6 +1,6 @@
 # SPEC 05: Creación del Primer Lead, Migración de Base de Datos y Redirección a WhatsApp
 
-**State:** Draft  
+**State:** Implementado   
 **Date:** 2026-09-02  
 **Objective:** Asegurar la estructura de la tabla `public.leads` en Supabase mediante una migración SQL, verificar la configuración de variables de entorno y validar el flujo de captura de leads desde el formulario UI con persistencia en BD y redirección a WhatsApp.
 
@@ -44,10 +44,15 @@ CREATE TABLE IF NOT EXISTS public.leads (
 ALTER TABLE public.leads ENABLE ROW LEVEL SECURITY;
 
 -- Política de lectura y escritura para service role / backend
-CREATE POLICY "Allow service role full access" ON public.leads
-  FOR ALL
-  USING (true)
+CREATE POLICY "Permitir insercion de leads" ON public.leads
+  FOR INSERT
+  TO public, anon, authenticated, service_role
   WITH CHECK (true);
+
+CREATE POLICY "Permitir lectura de leads" ON public.leads
+  FOR SELECT
+  TO public, anon, authenticated, service_role
+  USING (true);
 ```
 
 ---
@@ -72,13 +77,13 @@ CREATE POLICY "Allow service role full access" ON public.leads
 
 ## 4. Acceptance Criteria
 
-- [ ] Existe el archivo de migración SQL en `supabase/migrations/20260902_create_leads_table.sql`.
-- [ ] La tabla `public.leads` existe y está disponible en Supabase con su estructura completa y RLS activo.
-- [ ] El archivo `.env.local` incluye la variable `NEXT_PUBLIC_WHATSAPP_NUMBER` correctamente formateada.
-- [ ] El envío del formulario en la interfaz del cliente realiza un llamado `POST` a `/api/leads`.
-- [ ] La API `/api/leads` guarda exitosamente los datos del lead en la tabla `public.leads` de Supabase usando el Service Role key.
-- [ ] Tras el guardado en BD, el usuario es redirigido automáticamente a la ventana/pestaña de WhatsApp con el mensaje estructurado sobre el Rubber Shock RS-001.
-- [ ] El registro en la BD de Supabase queda verificado con `converted_to_wa = true` y estado `pending`.
+- [x] Existe el archivo de migración SQL en `supabase/migrations/20260902_create_leads_table.sql`.
+- [x] La tabla `public.leads` existe y está disponible en Supabase con su estructura completa y RLS activo.
+- [x] El archivo `.env.local` incluye la variable `NEXT_PUBLIC_WHATSAPP_NUMBER` correctamente formateada.
+- [x] El envío del formulario en la interfaz del cliente realiza un llamado `POST` a `/api/leads`.
+- [x] La API `/api/leads` guarda exitosamente los datos del lead en la tabla `public.leads` de Supabase usando el Service Role key.
+- [x] Tras el guardado en BD, el usuario es redirigido automáticamente a la ventana/pestaña de WhatsApp con el mensaje estructurado sobre el Rubber Shock RS-001.
+- [x] El registro en la BD de Supabase queda verificado con `converted_to_wa = true` y estado `pending`.
 
 ---
 
