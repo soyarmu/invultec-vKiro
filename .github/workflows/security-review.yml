@@ -1,0 +1,186 @@
+name: Security Review
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  # Job 1: Run Tests First
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm run test -- --run
+        env:
+          CI: true
+
+      - name: Generate coverage report
+        run: npm run test:coverage -- --run
+        continue-on-error: true
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            coverage/
+            test-results/
+          retention-days: 30
+
+  # Job 2: Security Scan (runs only if tests pass)
+  security-scan:
+    name: Security Scan (OWASP)
+    runs-on: ubuntu-latest
+    needs: test # Depends on test job
+    permissions:
+      contents: read
+      issues: write # Required to create/update issues
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Security Review Agent
+        run: npm run security-review
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true # Continue to upload results even if scan fails
+
+      - name: Upload security scan results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-scan-results
+          path: security-reports/
+          retention-days: 90
+
+      - name: Check scan result
+        run: |
+          if [ -f security-reports/latest.json ]; then
+            PASSED=$(jq -r '.passedScan' security-reports/latest.json)
+            CRITICAL=$(jq -r '.summary.critical' security-reports/latest.json)
+            HIGH=$(jq -r '.summary.high' security-reports/latest.json)
+            
+            echo "Security Scan Status: $PASSED"
+            echo "Critical Issues: $CRITICAL"
+            echo "High Priority Issues: $HIGH"
+            
+            if [ "$PASSED" != "true" ]; then
+              echo "::error::Security scan failed with $CRITICAL critical and $HIGH high priority issues"
+              exit 1
+            fi
+          else
+            echo "::error::Security scan results not found"
+            exit 1
+          fi
+
+      - name: Comment on PR (if applicable)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const scanResult = JSON.parse(fs.readFileSync('security-reports/latest.json', 'utf8'));
+            
+            const { summary, overallRisk, passedScan, issuesFound } = scanResult;
+            
+            const statusEmoji = passedScan ? '✅' : '❌';
+            const riskEmoji = {
+              'CRITICAL': '🔴',
+              'HIGH': '🟠',
+              'MODERATE': '🟡',
+              'LOW': '🟢',
+              'MINIMAL': '✨'
+            }[overallRisk] || '❓';
+            
+            let comment = `## ${statusEmoji} Security Review Report\n\n`;
+            comment += `**Overall Risk:** ${riskEmoji} ${overallRisk}\n`;
+            comment += `**Status:** ${passedScan ? '✅ PASSED' : '❌ FAILED'}\n`;
+            comment += `**Total Issues:** ${issuesFound}\n\n`;
+            comment += `### Issues by Severity\n\n`;
+            comment += `| Severity | Count |\n`;
+            comment += `|----------|-------|\n`;
+            comment += `| 🔴 Critical | ${summary.critical} |\n`;
+            comment += `| 🟠 High | ${summary.high} |\n`;
+            comment += `| 🟡 Medium | ${summary.medium} |\n`;
+            comment += `| 🟢 Low | ${summary.low} |\n`;
+            comment += `| ℹ️ Info | ${summary.info} |\n\n`;
+            
+            if (!passedScan) {
+              comment += `### ⚠️ Action Required\n\n`;
+              comment += `This PR has security issues that must be addressed:\n`;
+              if (summary.critical > 0) comment += `- 🔴 ${summary.critical} **CRITICAL** issue(s)\n`;
+              if (summary.high > 0) comment += `- 🟠 ${summary.high} **HIGH** priority issue(s)\n`;
+              comment += `\nPlease check the [Security Issues](https://github.com/${context.repo.owner}/${context.repo.repo}/labels/security-review) for details.\n`;
+            } else {
+              comment += `### ✅ All Clear\n\nNo critical or high priority security issues detected.\n`;
+            }
+            
+            comment += `\n---\n*Powered by Security Review Agent (OWASP Top 10 2021)*`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  # Job 3: Approval Gate (only for main branch)
+  approve:
+    name: Security Approval
+    runs-on: ubuntu-latest
+    needs: security-scan
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
+    
+    steps:
+      - name: Download security results
+        uses: actions/download-artifact@v4
+        with:
+          name: security-scan-results
+          path: security-reports/
+
+      - name: Approve deployment
+        run: |
+          PASSED=$(jq -r '.passedScan' security-reports/latest.json)
+          
+          if [ "$PASSED" = "true" ]; then
+            echo "✅ Code approved for deployment"
+            echo "APPROVED=true" >> $GITHUB_ENV
+          else
+            echo "❌ Code NOT approved - security issues must be fixed"
+            echo "APPROVED=false" >> $GITHUB_ENV
+            exit 1
+          fi
+
+      - name: Create deployment status
+        if: env.APPROVED == 'true'
+        run: |
+          echo "🚀 Ready for deployment"
+          echo "Security scan passed all checks"

@@ -15,7 +15,8 @@
     "test:e2e:critical": "playwright test --project=critical",
     "test:e2e:ui": "playwright test --ui",
     "test:watch": "vitest watch",
-    "testing-review": "tsx scripts/testing-review-agent/index.ts"
+    "testing-review": "tsx scripts/testing-review-agent/index.ts",
+    "security-review": "tsx scripts/security-review-agent/index.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.4",
@@ -28,6 +29,7 @@
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
+    "@octokit/rest": "^22.0.1",
     "@playwright/test": "^1.62.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^7.0.1",
