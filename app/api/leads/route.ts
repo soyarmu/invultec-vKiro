@@ -65,6 +65,7 @@ export async function POST(req: NextRequest) {
       model,
       year,
       quantity = 1,
+      consentGiven,
       hp = '',
     } = body;
 
@@ -124,6 +125,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Ley 1581 de 2012: sin consentimiento explícito no se almacena el dato
+    if (consentGiven !== true) {
+      return NextResponse.json(
+        { error: 'Debes aceptar la Política de Privacidad.' },
+        { status: 400 }
+      );
+    }
+
     // 4. Inserción en Supabase Server-Side
     const { data: leadData, error: dbError } = await supabaseAdmin
       .from('leads')
@@ -137,6 +146,8 @@ export async function POST(req: NextRequest) {
           quantity: Number(quantity) || 1,
           converted_to_wa: true,
           status: 'pending',
+          consent_given: true,
+          consent_at: new Date().toISOString(),
         },
       ])
       .select('id')
