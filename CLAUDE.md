@@ -29,7 +29,7 @@
 2. **Official Brand Terminology**:
    - Product name: **Rubber Shock RS-001** (or *Rubber Shock Invultec*)
    - Vehicle component: **resortes helicoidales** (helicoidal springs)
-   - Material: **hule uretano de alta resistencia** (high-resistance urethane rubber)
+   - Material: **neopreno de alta resistencia** (high-resistance neoprene rubber)
 3. **Corporate Color Palette**:
    - **Carmine Red (Brand Primary)**: `#C0262D`
    - **Corporate Black**: `#0A0A0A`

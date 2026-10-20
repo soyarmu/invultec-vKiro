@@ -17,7 +17,7 @@ const trustPoints = [
     icon: Package,
     title: 'Kits Listos para Instalar',
     description:
-      'Paquetes completos con 2 amortiguadores de hule uretano Rubber Shock RS-001 de alta durabilidad.',
+      'Paquetes completos con 2 amortiguadores de neopreno Rubber Shock RS-001 de alta durabilidad.',
   },
   {
     icon: Headphones,

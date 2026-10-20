@@ -1,6 +1,6 @@
 # SPEC 08: Cumplimiento Legal, Privacidad y Prácticas Justas
 
-**State:** Aprobado  
+**State:** Implementado  
 **Date:** 2026-10-19  
 **Objective:** Publicar las páginas legales del sitio (`/privacidad`, `/terminos`, `/reembolsos`, `/cookies`), agregar consentimiento explícito en la captura de leads y corregir afirmaciones del sitio para reflejar el material real del producto, sin introducir banner de cookies ni SDKs de terceros.
 
@@ -383,5 +383,5 @@ Checklist a completar durante la implementación:
 
 ---
 
-**Status**: 📝 Draft  
-**Pendiente**: Aprobación del usuario y revisión jurídica
+**Status**: ✅ Implementado  
+**Pendiente**: aplicar migraciones `20261019_*` en Supabase (proyecto sin resolución DNS el 2026-10-19) y revisión jurídica de los textos.

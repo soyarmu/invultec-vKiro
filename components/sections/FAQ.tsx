@@ -18,12 +18,12 @@ const faqs = [
   {
     question: '¿Cuántas unidades vienen en cada paquete?',
     answer:
-      'Cada kit Rubber Shock RS-001 incluye un par (2 unidades de hule uretano reforzado) listo para ser instalado en un eje de tu vehículo.',
+      'Cada kit Rubber Shock RS-001 incluye un par (2 unidades de neopreno reforzado) listo para ser instalado en un eje de tu vehículo.',
   },
   {
     question: '¿Requiere modificar la suspensión para instalarlo?',
     answer:
-      'No. La instalación es 100% reversible y no altera, corta ni modifica ninguna pieza original del vehículo ni invalida la garantía de la suspensión.',
+      'No. La instalación es 100% reversible y no altera, corta ni modifica ninguna pieza original del vehículo. Verifica con el fabricante o el taller las condiciones de tu garantía de suspensión.',
   },
   {
     question: '¿Es difícil de instalar?',

@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -13,7 +15,7 @@ export function Footer() {
   return (
     <footer className="border-t border-neutral-200 bg-neutral-900 text-white">
       <div className="container-custom py-12">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {/* Marca / Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2">
@@ -90,9 +92,12 @@ export function Footer() {
                 </span>
               </li>
               <li>
-                <span className="text-sm text-neutral-400">
-                  Garantía de Fábrica Invultec
-                </span>
+                <Link
+                  href="/reembolsos"
+                  className="text-sm text-neutral-300 hover:text-white transition-colors"
+                >
+                  Garantía y Reembolsos
+                </Link>
               </li>
               <li>
                 <span className="text-sm text-neutral-400">
@@ -101,11 +106,59 @@ export function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-red">
+              Legal
+            </h3>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <Link
+                  href="/privacidad"
+                  className="text-sm text-neutral-300 hover:text-white transition-colors"
+                >
+                  Política de Privacidad
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terminos"
+                  className="text-sm text-neutral-300 hover:text-white transition-colors"
+                >
+                  Términos del Servicio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/reembolsos"
+                  className="text-sm text-neutral-300 hover:text-white transition-colors"
+                >
+                  Política de Reembolso
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/cookies"
+                  className="text-sm text-neutral-300 hover:text-white transition-colors"
+                >
+                  Política de Cookies
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-8 border-t border-neutral-800 pt-8 text-center">
-          <p className="text-sm text-neutral-500">
-            &copy; {currentYear} Invultec Colombia — Rubber Shock RS-001. Todos los derechos reservados.
+        <div className="mt-8 border-t border-neutral-800 pt-8">
+          <p className="text-center text-xs leading-relaxed text-neutral-400">
+            Para quejas o reclamos, escríbenos por nuestro WhatsApp de atención.
+            También puedes acudir a la Superintendencia de Industria y Comercio
+            (SIC) — www.sic.gov.co. Consulta nuestras políticas en los enlaces
+            de la columna Legal.
+          </p>
+          <p className="mt-4 text-center text-sm text-neutral-500">
+            &copy; {currentYear} Invultec Colombia — Rubber Shock RS-001. Todos los
+            derechos reservados.
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Link from 'next/link';
 import vehiclesData from '@/data/vehicles.json';
 import { Select } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
@@ -14,6 +15,7 @@ export function LeadCaptureForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [hp, setHp] = useState('');
+  const [consentGiven, setConsentGiven] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -73,6 +75,13 @@ export function LeadCaptureForm() {
       return;
     }
 
+    if (!consentGiven) {
+      setError(
+        'Debes aceptar la Política de Privacidad para enviar tus datos.'
+      );
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -87,6 +96,7 @@ export function LeadCaptureForm() {
           brand,
           model,
           year,
+          consentGiven,
           hp,
         }),
       });
@@ -227,9 +237,52 @@ export function LeadCaptureForm() {
           required
         />
 
+        {/* Consentimiento de datos personales */}
+        <div>
+          <label
+            htmlFor="consent"
+            className="flex items-start gap-3 text-sm text-neutral-700"
+          >
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              checked={consentGiven}
+              onChange={(e) => {
+                setConsentGiven(e.target.checked);
+                setError(null);
+              }}
+              className="mt-0.5 h-4 w-4 flex-shrink-0 accent-brand-red"
+              aria-describedby="consent-help"
+            />
+            <span>
+              He leído y acepto la{' '}
+              <Link
+                href="/privacidad"
+                className="font-medium text-brand-red underline hover:text-brand-red-600"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Política de Privacidad
+              </Link>{' '}
+              y autorizo el tratamiento de mis datos para ser contactado por
+              Invultec.
+            </span>
+          </label>
+          <p id="consent-help" aria-live="polite" className="mt-2 text-xs text-neutral-500">
+            {consentGiven
+              ? 'Autorización otorgada.'
+              : 'Este campo es obligatorio para enviar la solicitud.'}
+          </p>
+        </div>
+
         {/* Mensajes de error */}
         {error && (
-          <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-600 font-medium animate-fade-in">
+          <div
+            role="alert"
+            aria-live="polite"
+            className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-600 font-medium animate-fade-in"
+          >
             {error}
           </div>
         )}
