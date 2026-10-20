@@ -125,7 +125,7 @@ export function LeadCaptureForm() {
   return (
     <div className="w-full max-w-xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-neutral-100">
       <div className="mb-6 text-center">
-        <span className="inline-block px-3 py-1 bg-brand-red-50 text-brand-red text-xs font-bold rounded-full uppercase tracking-wider mb-2">
+        <span className="inline-block px-3 py-1 bg-brand-red-50 text-brand-red-accessible text-xs font-bold rounded-full uppercase tracking-wider mb-2">
           Rubber Shock RS-001
         </span>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900">
@@ -259,14 +259,14 @@ export function LeadCaptureForm() {
               He leído y acepto la{' '}
               <Link
                 href="/privacidad"
-                className="font-medium text-brand-red underline hover:text-brand-red-600"
+                className="font-medium text-brand-red-accessible underline hover:text-brand-red-accessible"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Política de Privacidad
-              </Link>{' '}
-              y autorizo el tratamiento de mis datos para ser contactado por
-              Invultec.
+              </Link>
+              , declaro ser mayor de 18 años y autorizo el tratamiento de mis
+              datos para ser contactado por Invultec.
             </span>
           </label>
           <p id="consent-help" aria-live="polite" className="mt-2 text-xs text-neutral-500">
@@ -290,7 +290,7 @@ export function LeadCaptureForm() {
         {/* Mensaje de éxito */}
         {success && (
           <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-sm text-green-700 font-semibold flex items-center space-x-2 animate-fade-in">
-            <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+            <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" aria-hidden="true" />
             <span>
               ¡Información enviada con éxito! Redirigiendo a WhatsApp...
             </span>
@@ -303,16 +303,16 @@ export function LeadCaptureForm() {
           disabled={loading}
           variant="primary"
           size="lg"
-          className="w-full flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all transform active:scale-95"
+          className="w-full flex items-center justify-center space-x-2 bg-green-700 hover:bg-green-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all transform active:scale-95"
         >
           {loading ? (
             <>
-              <Loader2 className="w-5 h-5 animate-spin" />
+              <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
               <span>Procesando...</span>
             </>
           ) : (
             <>
-              <MessageSquare className="w-5 h-5" />
+              <MessageSquare className="w-5 h-5" aria-hidden="true" />
               <span>Consultar Disponibilidad en WhatsApp</span>
             </>
           )}

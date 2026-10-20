@@ -1,4 +1,5 @@
 import type { LegalSection } from '@/components/legal/LegalPage';
+import { COMPANY_DATA } from '@/lib/company';
 
 export const TERMS_UPDATED = '19 de octubre de 2026';
 
@@ -7,7 +8,7 @@ export const termsSections: LegalSection[] = [
     id: 'identificacion',
     heading: '1. Identificación del responsable',
     body: [
-      'Este sitio web es operado por Invultec Colombia, distribuidor del producto Rubber Shock RS-001. El canal oficial de atención, cotización y cierre de ventas es el WhatsApp publicado en el sitio.',
+      `Este sitio web es operado por ${COMPANY_DATA.legalName}, distribuidor del producto Rubber Shock RS-001. El canal oficial de atención, cotización y cierre de ventas es el WhatsApp publicado en el sitio.`,
       'Al utilizar este sitio aceptas los presentes Términos del Servicio. Si no estás de acuerdo, debes abstenerte de usar el sitio.',
     ],
   },

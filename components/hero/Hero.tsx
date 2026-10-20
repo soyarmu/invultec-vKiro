@@ -84,6 +84,8 @@ export function Hero() {
         width="100%"
         height="100%"
         preserveAspectRatio="none"
+        aria-hidden="true"
+        focusable="false"
       >
         <defs>
           <pattern
@@ -106,7 +108,13 @@ export function Hero() {
 
       {/* LAYER 3 — IMPACT DIAGRAM */}
       <div className="layer-impact absolute right-[6%] top-1/2 z-[2] h-[min(46vw,640px)] w-[min(46vw,640px)] -translate-y-1/2 scale-85 opacity-0 animate-impact-in lg:block hidden">
-        <svg viewBox="0 0 640 640" width="100%" height="100%">
+        <svg
+          viewBox="0 0 640 640"
+          width="100%"
+          height="100%"
+          aria-hidden="true"
+          focusable="false"
+        >
           {/* Pulsing rings */}
           <circle
             className="impact-ring animate-ring-pulse"
@@ -203,7 +211,7 @@ export function Hero() {
 
       {/* LAYER 6 — CONTENT */}
       <div className="layer-content relative z-[5] col-span-1 px-6 py-24 opacity-0 translate-y-3.5 animate-content-in sm:px-12 lg:px-16 lg:py-32">
-        <p className="eyebrow font-mono text-xs uppercase tracking-[0.14em] text-brand-red flex items-center gap-2.5 mb-4">
+        <p className="eyebrow font-mono text-xs uppercase tracking-[0.14em] text-brand-red-onDark flex items-center gap-2.5 mb-4">
           <span className="w-[26px] h-px bg-brand-red" />
           Ref. RS-001 · 100% neopreno
         </p>
@@ -211,7 +219,7 @@ export function Hero() {
         <h1 className="font-display text-[clamp(2.6rem,6vw,4.6rem)] font-bold leading-[0.96] tracking-tight uppercase text-neutral-0 mb-4">
           Rubber
           <br />
-          <span className="text-brand-red">Shock</span>{' '}
+          <span className="text-brand-red-onDark">Shock</span>{' '}
           <span
             className="font-display font-bold text-transparent text-[0.32em] align-top"
             style={{
@@ -230,15 +238,15 @@ export function Hero() {
 
         <ul className="specs flex flex-wrap gap-2.5 mb-10 p-0 list-none">
           <li className="font-mono text-xs text-neutral-100 border border-neutral-800 bg-[rgba(255,255,255,0.02)] px-3 py-2 flex items-center gap-2 tracking-wide">
-            <strong className="text-brand-red font-medium">+2.7 cm</strong>{' '}
+            <strong className="text-brand-red-onDark font-medium">+2.7 cm</strong>{' '}
             altura
           </li>
           <li className="font-mono text-xs text-neutral-100 border border-neutral-800 bg-[rgba(255,255,255,0.02)] px-3 py-2 flex items-center gap-2 tracking-wide">
-            <strong className="text-brand-red font-medium">35%</strong>{' '}
+            <strong className="text-brand-red-onDark font-medium">35%</strong>{' '}
             absorción de impacto
           </li>
           <li className="font-mono text-xs text-neutral-100 border border-neutral-800 bg-[rgba(255,255,255,0.02)] px-3 py-2 flex items-center gap-2 tracking-wide">
-            <strong className="text-brand-red font-medium">5 min</strong>{' '}
+            <strong className="text-brand-red-onDark font-medium">5 min</strong>{' '}
             instalación por rueda
           </li>
         </ul>
@@ -254,7 +262,7 @@ export function Hero() {
           >
             Ver producto
           </button>
-          <span className="cta-note font-mono text-[11px] text-neutral-500">
+          <span className="cta-note font-mono text-[11px] text-neutral-400">
             Envíos a nivel nacional
           </span>
         </div>

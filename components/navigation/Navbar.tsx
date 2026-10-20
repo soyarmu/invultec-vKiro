@@ -58,19 +58,19 @@ export function Navbar() {
           <div className="hidden items-center gap-8 md:flex">
             <button
               onClick={scrollToFinder}
-              className="text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
+              className="text-sm font-medium text-neutral-700 hover:text-brand-red-accessible transition-colors"
             >
               Encuentra Tu Ajuste
             </button>
             <button
               onClick={() => scrollToSection('how-it-works')}
-              className="text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
+              className="text-sm font-medium text-neutral-700 hover:text-brand-red-accessible transition-colors"
             >
               Cómo Funciona
             </button>
             <button
               onClick={() => scrollToSection('faq')}
-              className="text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
+              className="text-sm font-medium text-neutral-700 hover:text-brand-red-accessible transition-colors"
             >
               Preguntas Frecuentes
             </button>
@@ -90,9 +90,9 @@ export function Navbar() {
             aria-label="Alternar menú"
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6" aria-hidden="true" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6" aria-hidden="true" />
             )}
           </button>
         </div>
@@ -105,19 +105,19 @@ export function Navbar() {
             <div className="flex flex-col gap-4">
               <button
                 onClick={scrollToFinder}
-                className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
+                className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red-accessible transition-colors"
               >
                 Encuentra Tu Ajuste
               </button>
               <button
                 onClick={() => scrollToSection('how-it-works')}
-                className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
+                className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red-accessible transition-colors"
               >
                 Cómo Funciona
               </button>
               <button
                 onClick={() => scrollToSection('faq')}
-                className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red transition-colors"
+                className="text-left text-sm font-medium text-neutral-700 hover:text-brand-red-accessible transition-colors"
               >
                 Preguntas Frecuentes
               </button>

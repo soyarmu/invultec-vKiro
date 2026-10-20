@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { COMPANY_DATA } from '@/lib/company';
 
 export interface LegalSection {
   id: string;
@@ -36,7 +37,7 @@ export function LegalPage({ title, lastUpdated, sections }: LegalPageProps) {
           </Link>
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm text-neutral-300 transition-colors hover:text-white"
+            className="flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-white"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             Volver al inicio
@@ -44,7 +45,11 @@ export function LegalPage({ title, lastUpdated, sections }: LegalPageProps) {
         </div>
       </header>
 
-      <main className="container-custom max-w-4xl py-12 sm:py-16">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="container-custom max-w-4xl py-12 sm:py-16"
+      >
         {process.env.NODE_ENV !== 'production' && (
           <div
             role="note"
@@ -62,13 +67,37 @@ export function LegalPage({ title, lastUpdated, sections }: LegalPageProps) {
           Última actualización: {lastUpdated}
         </p>
 
+        <div className="mt-6 rounded-lg border border-neutral-200 bg-white p-4 text-sm text-neutral-700">
+          <h2 className="font-semibold text-neutral-900">
+            Responsable del sitio
+          </h2>
+          <p className="mt-2">
+            {COMPANY_DATA.legalName} — NIT {COMPANY_DATA.nit}
+          </p>
+          <p>{COMPANY_DATA.address}, {COMPANY_DATA.city}, {COMPANY_DATA.country}</p>
+          <p>
+            Correo:{' '}
+            <a
+              href={`mailto:${COMPANY_DATA.email}`}
+              className="text-brand-red-accessible underline"
+            >
+              {COMPANY_DATA.email}
+            </a>
+          </p>
+          <p className="mt-2">
+            <Link href="/privacidad/solicitud" className="text-brand-red-accessible underline">
+              Solicitar acceso, rectificación o eliminación de mis datos
+            </Link>
+          </p>
+        </div>
+
         <nav aria-label="Documentos legales" className="mt-6">
           <ul className="flex flex-wrap gap-2">
             {LEGAL_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="inline-block rounded border border-neutral-300 bg-white px-3 py-1.5 text-xs text-neutral-700 transition-colors hover:border-brand-red hover:text-brand-red"
+                  className="inline-block rounded border border-neutral-300 bg-white px-3 py-1.5 text-xs text-neutral-700 transition-colors hover:border-brand-red hover:text-brand-red-accessible"
                 >
                   {link.label}
                 </Link>
@@ -98,7 +127,7 @@ export function LegalPage({ title, lastUpdated, sections }: LegalPageProps) {
         <footer className="mt-12 border-t border-neutral-200 pt-6">
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm font-medium text-brand-red hover:underline"
+            className="flex items-center gap-2 text-sm font-medium text-brand-red-accessible hover:underline"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             Volver al inicio

@@ -73,7 +73,7 @@ export function VehicleFitmentFinder() {
       {state === 'input' && (
         <div className="animate-fade-in">
           <div className="mb-6">
-            <p className="text-sm font-medium uppercase tracking-wide text-brand-red">
+            <p className="text-sm font-medium uppercase tracking-wide text-brand-red-accessible">
               Encuentra Tu Ajuste
             </p>
             <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
@@ -105,7 +105,7 @@ export function VehicleFitmentFinder() {
       {state === 'measurement' && vehicle && (
         <div className="animate-slide-up">
           <div className="mb-6">
-            <p className="text-sm font-medium uppercase tracking-wide text-brand-red">
+            <p className="text-sm font-medium uppercase tracking-wide text-brand-red-accessible">
               Un Paso Más
             </p>
             <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">

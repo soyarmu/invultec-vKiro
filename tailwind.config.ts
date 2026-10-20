@@ -14,6 +14,10 @@ const config: Config = {
           red: {
             DEFAULT: '#C0262D',
             dark: '#8B1E23',
+            // WCAG AA (4.5:1) over white for small text and links
+            accessible: '#A81F25',
+            // WCAG AA (4.5:1) over the dark hero background
+            onDark: '#E04A50',
             50: '#FDF2F2',
             100: '#FDE8E8',
             200: '#FBD5D5',
