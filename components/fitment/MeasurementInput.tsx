@@ -84,7 +84,7 @@ export function MeasurementInput({
         ¿Necesitas ayuda para medir?{' '}
         <a
           href="#measurement-guide"
-          className="font-medium text-brand-red hover:underline"
+          className="font-medium text-brand-red-accessible hover:underline"
         >
           Ver guía de medición
         </a>

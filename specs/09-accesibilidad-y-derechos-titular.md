@@ -1,6 +1,6 @@
 # SPEC 09: Accesibilidad, Datos de Empresa y Derechos del Titular
 
-**State:** Aprobado  
+**State:** Implementado  
 **Date:** 2026-10-19  
 **Objective:** Hacer el sitio operable y comprensible con lector de pantalla y teclado (alt correcto, contraste WCAG AA, navegación accesible), publicar los datos identificativos de la empresa en Footer y páginas legales, declarar el tratamiento de datos de menores, documentar la procedencia de las imágenes y clarificar el procedimiento para solicitar la eliminación de datos.
 
@@ -156,44 +156,44 @@ Cada paso deja el sistema funcional.
 ## 4. Acceptance Criteria
 
 ### Datos de empresa
-- [ ] `lib/company.ts` existe y exporta `COMPANY_DATA` con razón social, NIT, dirección, ciudad, email y WhatsApp.
-- [ ] El Footer muestra razón social, NIT y email de contacto.
-- [ ] Las 4 páginas legales muestran el bloque "Responsable del sitio" con los mismos datos.
-- [ ] `grep -rn "NIT" app components content` solo encuentra referencias a `COMPANY_DATA`, no literales duplicados.
+- [x] `lib/company.ts` existe y exporta `COMPANY_DATA` con razón social, NIT, dirección, ciudad, email y WhatsApp.
+- [x] El Footer muestra razón social, NIT y email de contacto.
+- [x] Las 4 páginas legales muestran el bloque "Responsable del sitio" con los mismos datos.
+- [x] `grep -rn "NIT" app components content` solo encuentra referencias a `COMPANY_DATA`, no literales duplicados.
 
 ### Texto alternativo
-- [ ] La imagen del producto conserva un `alt` descriptivo.
-- [ ] Todos los iconos y SVG decorativos tienen `aria-hidden="true"` o `alt=""`.
-- [ ] Ningún `<Image>` carece de `alt`.
+- [x] La imagen del producto conserva un `alt` descriptivo.
+- [x] Todos los iconos y SVG decorativos tienen `aria-hidden="true"` o `alt=""`.
+- [x] Ningún `<Image>` carece de `alt`.
 
 ### Contraste
-- [ ] Texto normal ≥ 4.5:1 en Hero, Footer, botones, formulario y páginas legales.
-- [ ] Texto grande ≥ 3:1 y componentes de interfaz ≥ 3:1.
-- [ ] Tabla de mediciones antes/después registrada en la sección 9.
+- [x] Texto normal ≥ 4.5:1 en Hero, Footer, botones, formulario y páginas legales.
+- [x] Texto grande ≥ 3:1 y componentes de interfaz ≥ 3:1.
+- [x] Tabla de mediciones antes/después registrada en la sección 9.
 
 ### Teclado
-- [ ] Primer Tab revela el skip link y Enter lleva a `#main-content`.
-- [ ] Todos los interactivos muestran foco visible.
-- [ ] El orden de tabulación de la Home sigue el orden visual.
+- [x] Primer Tab revela el skip link y Enter lleva a `#main-content`.
+- [x] Todos los interactivos muestran foco visible.
+- [x] El orden de tabulación de la Home sigue el orden visual.
 
 ### Menores
-- [ ] `/privacidad` contiene una sección sobre menores de edad.
-- [ ] El formulario indica que se debe ser mayor de 18 años antes de postular datos.
+- [x] `/privacidad` contiene una sección sobre menores de edad.
+- [x] El formulario indica que se debe ser mayor de 18 años antes de postular datos.
 
 ### Imágenes
-- [ ] `content/media/provenance.ts` registra todas las imágenes de `public/images`.
-- [ ] Ninguna imagen marcada `PENDING_LICENSE` se publica en producción.
+- [x] `content/media/provenance.ts` registra todas las imágenes de `public/images`.
+- [x] Ninguna imagen marcada `PENDING_LICENSE` se publica en producción.
 
 ### Eliminación de datos
-- [ ] `/privacidad/solicitud` responde 200 y enlaza desde `/privacidad` y el Footer.
-- [ ] El botón abre WhatsApp con el mensaje prellenado correcto.
-- [ ] `/privacidad` describe el canal, los plazos y el derecho ejercido.
+- [x] `/privacidad/solicitud` responde 200 y enlaza desde `/privacidad` y el Footer.
+- [x] El botón abre WhatsApp con el mensaje prellenado correcto.
+- [x] `/privacidad` describe el canal, los plazos y el derecho ejercido.
 
 ### Calidad
-- [ ] `npm run lint` sin errores.
-- [ ] `npx tsc --noEmit` sin errores.
-- [ ] `npm run build` exitoso.
-- [ ] `npm run test` sin regresiones.
+- [x] `npm run lint` sin errores.
+- [x] `npx tsc --noEmit` sin errores.
+- [x] `npm run build` exitoso.
+- [x] `npm run test` sin regresiones.
 
 ---
 
@@ -308,18 +308,26 @@ Antes de implementar se requieren:
 
 ---
 
-## 9. Contrast Measurements (a completar en implementación)
+## 9. Contrast Measurements
 
-| Elemento | Fondo | Texto | Ratio actual | Ratio objetivo | Acción |
-|----------|-------|-------|--------------|----------------|--------|
-| Hero — eyebrow | `#0A0A0A` | `#C0262D` |  | 4.5:1 |  |
-| Hero — subhead | `#0A0A0A` | `neutral-300` |  | 4.5:1 |  |
-| Hero — specs | `rgba(255,255,255,0.02)` | `neutral-100` |  | 4.5:1 |  |
-| Footer — description | `neutral-900` | `neutral-400` |  | 4.5:1 |  |
-| Footer — enlaces | `neutral-900` | `neutral-300` |  | 4.5:1 |  |
-| Botón primario | `#C0262D` | `#FFFFFF` |  | 4.5:1 |  |
-| Mensaje de error | `red-50` | `red-600` |  | 4.5:1 |  |
-| Mensaje de éxito | `green-50` | `green-700` |  | 4.5:1 |  |
+Ratios calculados con la fórmula WCAG 2.1 (luminancia relativa, sRGB) sobre los colores finales.
+
+| Elemento | Fondo | Texto | Antes | Después | Objetivo | Acción |
+|----------|-------|-------|-------|---------|----------|--------|
+| Hero — eyebrow | `#0E0E0E` | `brand-red` → `brand-red-onDark` (`#E04A50`) | 3.27:1 | **4.84:1** ✅ | 4.5:1 | Token nuevo `brand.red.onDark` |
+| Hero — acentos "Shock"/specs | `#0E0E0E` | `brand-red` → `brand-red-onDark` | 3.27:1 | **4.84:1** ✅ | 4.5:1 | Mismo token |
+| Footer — descripción y copyright | `neutral-900` (`#171717`) | `neutral-500` → `neutral-400` (`#A3A3A3`) | 3.78:1 | **7.11:1** ✅ | 4.5:1 | `text-neutral-400` |
+| Footer — títulos de columna | `neutral-900` | `brand-red` (`#C0262D`) | 3.04:1 | 3.04:1 ⚠️ | 3:1 (texto ≥18.66px bold) | Cumple como texto grande/UI; se mantiene el rojo de marca |
+| Footer — enlaces | `neutral-900` | `neutral-300` (`#D4D4D4`) | 10.9:1 | **10.9:1** ✅ | 4.5:1 | Sin cambio |
+| Enlaces legales (blancos) | `#FFFFFF` | `brand-red` → `brand-red-accessible` (`#A81F25`) | 5.9:1 | **7.27:1** ✅ | 4.5:1 | Token nuevo `brand.red.accessible` |
+| Botón primario (FinalCTA / Hero) | `brand-red` | `#FFFFFF` | 5.9:1 | **5.9:1** ✅ | 4.5:1 | Sin cambio |
+| Botón WhatsApp del formulario | `green-600` → `green-700` (`#15803D`) | `#FFFFFF` | 3.3:1 ❌ | **5.02:1** ✅ | 4.5:1 | `hover:bg-green-800` |
+| Mensaje de error | `red-50` | `red-700` | 5.4:1 | **5.4:1** ✅ | 4.5:1 | Sin cambio |
+| Mensaje de éxito | `green-50` | `green-700` | 5.0:1 | **5.0:1** ✅ | 4.5:1 | Sin cambio |
+| Badge "Rubber Shock RS-001" (formulario) | `brand-red-50` | `brand-red` → `brand-red-accessible` | 5.37:1 | **6.65:1** ✅ | 4.5:1 | Token accesible |
+| Etiqueta de formulario (uppercase) | `#FFFFFF` | `brand-red` → `brand-red-accessible` | 5.9:1 | **7.27:1** ✅ | 4.5:1 | Token accesible |
+| Párrafo secundario | `neutral-50` | `neutral-600` (`#525252`) | 7.6:1 | **7.6:1** ✅ | 4.5:1 | Sin cambio |
+| Enlaces de navbar (hover) | `#FFFFFF` | `brand-red` → `brand-red-accessible` | 5.9:1 | **7.27:1** ✅ | 4.5:1 | Token accesible |
 
 ---
 

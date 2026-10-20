@@ -15,7 +15,7 @@ export default function Home() {
       <Navbar />
       
       {/* Add top padding to account for fixed navbar */}
-      <main className="pt-16 sm:pt-20">
+      <main id="main-content" tabIndex={-1} className="pt-16 sm:pt-20">
         <Hero />
         <FitmentFinderSection />
         <WhyThisProduct />

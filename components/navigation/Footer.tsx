@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { COMPANY_DATA } from '@/lib/company';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -145,20 +146,42 @@ export function Footer() {
                   Política de Cookies
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/privacidad/solicitud"
+                  className="text-sm text-neutral-300 hover:text-white transition-colors"
+                >
+                  Solicitud de Datos
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-8 border-t border-neutral-800 pt-8">
-          <p className="text-center text-xs leading-relaxed text-neutral-400">
+          <div className="text-center text-xs leading-relaxed text-neutral-400">
+            <p>
+              {COMPANY_DATA.legalName} · NIT {COMPANY_DATA.nit} ·{' '}
+              {COMPANY_DATA.address}, {COMPANY_DATA.city}, {COMPANY_DATA.country}
+            </p>
+            <p className="mt-2">
+              <a
+                href={`mailto:${COMPANY_DATA.email}`}
+                className="underline transition-colors hover:text-white"
+              >
+                {COMPANY_DATA.email}
+              </a>
+            </p>
+          </div>
+          <p className="mt-4 text-center text-xs leading-relaxed text-neutral-400">
             Para quejas o reclamos, escríbenos por nuestro WhatsApp de atención.
             También puedes acudir a la Superintendencia de Industria y Comercio
             (SIC) — www.sic.gov.co. Consulta nuestras políticas en los enlaces
             de la columna Legal.
           </p>
-          <p className="mt-4 text-center text-sm text-neutral-500">
-            &copy; {currentYear} Invultec Colombia — Rubber Shock RS-001. Todos los
-            derechos reservados.
+          <p className="mt-4 text-center text-sm text-neutral-400">
+            &copy; {currentYear} {COMPANY_DATA.tradeName} — Rubber Shock RS-001.
+            Todos los derechos reservados.
           </p>
         </div>
       </div>
