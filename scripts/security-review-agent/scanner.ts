@@ -103,7 +103,7 @@ function scanFile(filePath: string, content: string): SecurityIssue[] {
   return issues;
 }
 
-function calculateOverallRisk(summary: Record<SeverityLevel | 'info', number>): SecurityScanResult['overallRisk'] {
+function calculateOverallRisk(summary: SecurityScanResult['summary']): SecurityScanResult['overallRisk'] {
   if (summary.critical > 0) return 'CRITICAL';
   if (summary.high >= 3) return 'HIGH';
   if (summary.high > 0 || summary.medium >= 5) return 'MODERATE';

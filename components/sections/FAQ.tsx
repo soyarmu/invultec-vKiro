@@ -13,7 +13,7 @@ const faqs = [
   {
     question: '¿Qué beneficios le aporta a la suspensión de mi carro?',
     answer:
-      'El Rubber Shock RS-001 absorbe hasta un 95% de los golpes fuertes al pasar por huecos o resaltos, evita que el vehículo se agache por el peso de carga o pasajeros, mejora la estabilidad en curvas y prolonga la vida útil de tus amortiguadores originales.',
+      'El Rubber Shock RS-001 absorbe hasta un 35% de los golpes fuertes al pasar por huecos o resaltos, evita que el vehículo se agache por el peso de carga o pasajeros, mejora la estabilidad en curvas y prolonga la vida útil de tus amortiguadores originales.',
   },
   {
     question: '¿Cuántas unidades vienen en cada paquete?',

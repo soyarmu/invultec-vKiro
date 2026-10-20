@@ -247,9 +247,9 @@ describe('VehicleSelector Component', () => {
     it('maneja marca sin modelos disponibles', async () => {
       const user = userEvent.setup();
       
-      // Mock para retornar array vacío
+      // Mock para retornar array vacío solo para este test
       const { getVehicleModels } = await import('@/data/fitment/vehicle-data');
-      vi.mocked(getVehicleModels).mockReturnValue([]);
+      vi.mocked(getVehicleModels).mockReturnValueOnce([]);
 
       render(<VehicleSelector onVehicleChange={mockOnVehicleChange} />);
 
@@ -270,9 +270,12 @@ describe('VehicleSelector Component', () => {
       const user = userEvent.setup();
       render(<VehicleSelector onVehicleChange={mockOnVehicleChange} />);
 
-      // Selecciones rápidas sin esperar
       await user.selectOptions(screen.getByLabelText(/marca/i), 'Toyota');
+      expect(await screen.findByRole('option', { name: 'Hilux' })).toBeInTheDocument();
+
       await user.selectOptions(screen.getByLabelText(/modelo/i), 'Hilux');
+      expect(await screen.findByRole('option', { name: '2020' })).toBeInTheDocument();
+
       await user.selectOptions(screen.getByLabelText(/año/i), '2020');
 
       // Debe eventualmente llamar al callback

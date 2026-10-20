@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export function Hero() {
   const rivetsRef = useRef<HTMLDivElement>(null);
@@ -31,7 +32,7 @@ export function Hero() {
     if (ticksRef.current) {
       const ticks = [
         { label: 'RS-001', x: '6%', y: '10%', delay: '3.1s' },
-        { label: '95% ABS.', x: '90%', y: '18%', delay: '3.3s' },
+        { label: '35% ABS.', x: '90%', y: '18%', delay: '3.3s' },
         { label: '+2.7CM', x: '4%', y: '82%', delay: '3.5s' },
         { label: 'NEOPRENO', x: '88%', y: '86%', delay: '3.7s' },
       ];
@@ -233,7 +234,7 @@ export function Hero() {
             altura
           </li>
           <li className="font-mono text-xs text-neutral-100 border border-neutral-800 bg-[rgba(255,255,255,0.02)] px-3 py-2 flex items-center gap-2 tracking-wide">
-            <strong className="text-brand-red font-medium">95%</strong>{' '}
+            <strong className="text-brand-red font-medium">35%</strong>{' '}
             absorción de impacto
           </li>
           <li className="font-mono text-xs text-neutral-100 border border-neutral-800 bg-[rgba(255,255,255,0.02)] px-3 py-2 flex items-center gap-2 tracking-wide">
@@ -260,80 +261,17 @@ export function Hero() {
       </div>
 
       {/* LAYER 4 — PRODUCT */}
-      <div className="layer-product relative z-[3] col-span-1 flex items-center justify-center px-8 py-16 opacity-0 translate-x-10 scale-94 animate-product-in lg:py-16">
-        <svg
-          className="product-parallax animate-idle-float w-[min(90%,460px)] h-auto"
-          style={{
-            filter: 'drop-shadow(0 30px 40px rgba(0,0,0,0.55))',
-            transformOrigin: 'center',
-          }}
-          viewBox="0 0 320 420"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Top cap */}
-          <ellipse
-            cx="160"
-            cy="60"
-            rx="34"
-            ry="12"
-            fill="#1A1A18"
-            stroke="#3A3A37"
+      <div className="layer-product relative z-[3] col-span-1 flex items-center justify-center px-4 py-12 opacity-0 translate-x-10 scale-94 animate-product-in sm:px-8 sm:py-16 lg:py-16">
+        <div className="product-parallax animate-idle-float relative w-[min(95%,600px)] aspect-[2752/1536]">
+          <Image
+            src="/images/agent_generate_image___3D_photorealistic_cinematic_product_render__X_ray_side_view_.png"
+            alt="Rubber Shock RS-001 - Render 3D cinematográfico y vista rayos X de suspensión"
+            fill
+            priority
+            sizes="(max-width: 640px) 95vw, (max-width: 1024px) 80vw, 600px"
+            className="object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.7)]"
           />
-          <rect x="140" y="20" width="40" height="46" rx="6" fill="#111" />
-
-          {/* Upper mount */}
-          <path
-            d="M110 90 Q160 60 210 90 L215 150 Q160 175 105 150 Z"
-            fill="#161615"
-            stroke="#3A3A37"
-            strokeWidth="1.5"
-          />
-          <circle cx="130" cy="115" r="6" fill="#050505" />
-          <circle cx="190" cy="115" r="6" fill="#050505" />
-
-          {/* Shock wave lines */}
-          <g stroke="#C0262D" strokeWidth="4" fill="none" opacity="0.9">
-            <path d="M60 150 C90 160, 70 190, 100 200 C130 210, 110 240, 140 250" />
-            <path d="M220 150 C250 160, 230 190, 260 200 C290 210, 270 240, 300 250" />
-          </g>
-
-          {/* Rubber coils */}
-          <g stroke="#4A4A46" strokeWidth="1.5">
-            <ellipse cx="160" cy="160" rx="72" ry="26" fill="#0F0F0E" />
-            <ellipse cx="160" cy="185" rx="72" ry="26" fill="#141412" />
-            <ellipse cx="160" cy="210" rx="72" ry="26" fill="#0F0F0E" />
-            <ellipse cx="160" cy="235" rx="72" ry="26" fill="#141412" />
-          </g>
-
-          {/* Texture details */}
-          <g fill="#050505">
-            <circle cx="120" cy="160" r="4" />
-            <circle cx="160" cy="150" r="4" />
-            <circle cx="200" cy="160" r="4" />
-            <circle cx="120" cy="185" r="4" />
-            <circle cx="160" cy="175" r="4" />
-            <circle cx="200" cy="185" r="4" />
-            <circle cx="120" cy="210" r="4" />
-            <circle cx="160" cy="200" r="4" />
-            <circle cx="200" cy="210" r="4" />
-          </g>
-
-          {/* Lower shaft */}
-          <rect
-            x="140"
-            y="255"
-            width="40"
-            height="130"
-            rx="4"
-            fill="#101010"
-            stroke="#2E2E2B"
-          />
-          <rect x="132" y="270" width="56" height="10" fill="#C0262D" />
-
-          {/* Bottom mount */}
-          <circle cx="160" cy="390" r="10" fill="#0A0A0A" stroke="#3A3A37" />
-        </svg>
+        </div>
       </div>
 
       {/* Mobile impact diagram adjustment */}

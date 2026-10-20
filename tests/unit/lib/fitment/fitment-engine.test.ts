@@ -181,7 +181,7 @@ describe('Fitment Engine - getFitmentRecommendation', () => {
 
   describe('No Match Scenarios', () => {
     it('retorna MEASUREMENT_REQUIRED cuando vehículo no existe en BD', () => {
-      vi.mocked(vehicleData.findFitmentData).mockReturnValue(null);
+      vi.mocked(vehicleData.findFitmentData).mockReturnValue(undefined);
 
       const result = getFitmentRecommendation(unknownVehicle);
 
@@ -204,7 +204,7 @@ describe('Fitment Engine - getFitmentRecommendation', () => {
 
     it('retorna NO_MATCH cuando producto no existe', () => {
       vi.mocked(vehicleData.findFitmentData).mockReturnValue(toyotaHiluxFitmentData);
-      vi.mocked(products.getProductByType).mockReturnValue(null);
+      vi.mocked(products.getProductByType).mockReturnValue(undefined);
 
       const result = getFitmentRecommendation(validVehicle);
 
@@ -388,7 +388,7 @@ describe('Fitment Engine - getFitmentFromMeasurement', () => {
 
   describe('No Match Scenarios', () => {
     it('retorna NO_MATCH cuando no hay size range para la medida', () => {
-      vi.mocked(sizeRanges.findTypeBySpringGap).mockReturnValue(null);
+      vi.mocked(sizeRanges.findTypeBySpringGap).mockReturnValue(undefined);
 
       const result = getFitmentFromMeasurement(largeMeasurement);
 
@@ -419,7 +419,7 @@ describe('Fitment Engine - getFitmentFromMeasurement', () => {
         max: 2.0,
         unit: 'inches',
       });
-      vi.mocked(products.getProductByType).mockReturnValue(null);
+      vi.mocked(products.getProductByType).mockReturnValue(undefined);
 
       const result = getFitmentFromMeasurement(validMeasurementInches);
 
@@ -429,7 +429,7 @@ describe('Fitment Engine - getFitmentFromMeasurement', () => {
 
   describe('Edge Cases', () => {
     it('maneja medidas muy pequeñas', () => {
-      vi.mocked(sizeRanges.findTypeBySpringGap).mockReturnValue(null);
+      vi.mocked(sizeRanges.findTypeBySpringGap).mockReturnValue(undefined);
 
       const result = getFitmentFromMeasurement(createMeasurement({
         springGap: 0.25,
@@ -440,7 +440,7 @@ describe('Fitment Engine - getFitmentFromMeasurement', () => {
     });
 
     it('maneja medidas muy grandes', () => {
-      vi.mocked(sizeRanges.findTypeBySpringGap).mockReturnValue(null);
+      vi.mocked(sizeRanges.findTypeBySpringGap).mockReturnValue(undefined);
 
       const result = getFitmentFromMeasurement(largeMeasurement);
 
@@ -494,7 +494,7 @@ describe('Fitment Engine - getConfidenceBadgeInfo', () => {
   });
 
   it('procesa todos los casos de confidenceBadgeTestData', () => {
-    confidenceBadgeTestData.forEach(({ confidence, expectedText, expectedVariant }) => {
+    confidenceBadgeTestData.forEach(({ confidence, expectedText, expectedVariant }: any) => {
       const result = getConfidenceBadgeInfo(confidence);
 
       expect(result.text).toBe(expectedText);
@@ -516,10 +516,10 @@ describe('Fitment Engine - Integration Tests', () => {
     vi.mocked(products.getProductByType).mockReturnValue(availableProduct);
 
     const fitmentResult = getFitmentRecommendation(validVehicle);
-    
+
     expect(fitmentResult.status).toBe('MATCH');
     expect(fitmentResult.product).toBeDefined();
-    
+
     if (fitmentResult.confidence) {
       const badgeInfo = getConfidenceBadgeInfo(fitmentResult.confidence);
       expect(badgeInfo.text).toBeDefined();
@@ -529,7 +529,7 @@ describe('Fitment Engine - Integration Tests', () => {
 
   it('workflow completo: vehículo desconocido → measurement → producto', () => {
     // Step 1: Vehículo no encontrado
-    vi.mocked(vehicleData.findFitmentData).mockReturnValue(null);
+    vi.mocked(vehicleData.findFitmentData).mockReturnValue(undefined);
     const vehicleResult = getFitmentRecommendation(unknownVehicle);
     
     expect(vehicleResult.status).toBe('MEASUREMENT_REQUIRED');
