@@ -11,8 +11,10 @@ const supabaseServiceRoleKey =
   process.env.SUPABASE_SERVICE_ROLE_KEY ||
   supabasePublicApiKey;
 
-if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
-  console.warn('[Supabase] NEXT_PUBLIC_SUPABASE_URL no está definida en las variables de entorno.');
+if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !supabasePublicApiKey) {
+  throw new Error(
+    '[Supabase] NEXT_PUBLIC_SUPABASE_URL y NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY (o NEXT_PUBLIC_SUPABASE_ANON_KEY) deben estar definidas en las variables de entorno.',
+  );
 }
 
 export const supabase = createClient(supabaseUrl, supabasePublicApiKey, {
