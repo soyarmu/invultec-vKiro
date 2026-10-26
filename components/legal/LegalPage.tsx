@@ -50,16 +50,6 @@ export function LegalPage({ title, lastUpdated, sections }: LegalPageProps) {
         tabIndex={-1}
         className="container-custom max-w-4xl py-12 sm:py-16"
       >
-        {process.env.NODE_ENV !== 'production' && (
-          <div
-            role="note"
-            className="mb-8 border-l-4 border-amber-500 bg-amber-50 px-4 py-3 text-sm text-amber-900"
-          >
-            <strong>Pendiente de revisión jurídica.</strong> Este texto es un
-            borrador y no debe publicarse en producción sin validación legal.
-          </div>
-        )}
-
         <h1 className="font-display text-3xl font-bold uppercase tracking-tight text-neutral-900 sm:text-4xl">
           {title}
         </h1>
