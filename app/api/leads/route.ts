@@ -155,7 +155,10 @@ export async function POST(req: NextRequest) {
 
     if (dbError) {
       console.error('Error insertando lead en Supabase:', dbError);
-      // Retornamos de todos modos la URL de WhatsApp para no perder el cliente
+      return NextResponse.json(
+        { error: 'No se pudo guardar tu solicitud. Intenta nuevamente.' },
+        { status: 500 }
+      );
     }
 
     // 5. Generación de mensaje y URL de WhatsApp
