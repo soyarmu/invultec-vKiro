@@ -31,7 +31,6 @@ export function Hero() {
     // Add measurement ticks
     if (ticksRef.current) {
       const ticks = [
-        { label: 'RS-001', x: '6%', y: '10%', delay: '3.1s' },
         { label: '35% ABS.', x: '90%', y: '18%', delay: '3.3s' },
         { label: '+2.7CM', x: '4%', y: '82%', delay: '3.5s' },
         { label: 'NEOPRENO', x: '88%', y: '86%', delay: '3.7s' },
@@ -57,7 +56,7 @@ export function Hero() {
   };
 
   return (
-    <section className="hero relative isolate grid min-h-screen grid-cols-1 items-center overflow-hidden bg-neutral-950 text-neutral-100 lg:grid-cols-[1.05fr_0.95fr]">
+    <section className="hero relative isolate grid min-h-screen grid-cols-1 items-center overflow-hidden bg-neutral-950 text-neutral-100 lg:grid-cols-[0.85fr_1.15fr]">
       {/* LAYER 1 — BACKGROUND */}
       <div
         className="layer-bg absolute inset-0 z-0 opacity-0 animate-bg-in"
@@ -269,15 +268,15 @@ export function Hero() {
       </div>
 
       {/* LAYER 4 — PRODUCT */}
-      <div className="layer-product relative z-[3] col-span-1 flex items-center justify-center px-4 py-12 opacity-0 translate-x-10 scale-94 animate-product-in sm:px-8 sm:py-16 lg:py-16">
-        <div className="product-parallax animate-idle-float relative w-[min(95%,600px)] aspect-[2752/1536]">
+      <div className="layer-product relative z-[3] col-span-1 flex items-center justify-center px-0 py-8 opacity-0 translate-x-10 scale-94 animate-product-in sm:py-10 lg:py-6">
+        <div className="product-parallax animate-idle-float relative w-[min(110%,880px)] aspect-[2752/1536]">
           <Image
-            src="/images/agent_generate_image___3D_photorealistic_cinematic_product_render__X_ray_side_view_.png"
+            src="/images/1ruber_hero_invultec.png"
             alt="Rubber Shock RS-001 - Render 3D cinematográfico y vista rayos X de suspensión"
             fill
             priority
-            sizes="(max-width: 640px) 95vw, (max-width: 1024px) 80vw, 600px"
-            className="object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.7)]"
+            sizes="(max-width: 640px) 95vw, (max-width: 1024px) 80vw, 880px"
+            className="object-contain scale-[1.35] drop-shadow-[0_25px_45px_rgba(0,0,0,0.7)]"
           />
         </div>
       </div>

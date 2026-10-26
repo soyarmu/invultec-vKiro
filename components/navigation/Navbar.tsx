@@ -48,7 +48,7 @@ export function Navbar() {
               className="flex items-center gap-2 text-xl font-bold text-neutral-900 hover:text-brand-red transition-colors"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-red">
-                <span className="text-lg font-bold text-white">RS</span>
+                <span className="text-lg font-bold text-white">I</span>
               </div>
               <span className="hidden sm:inline">Rubber Shock</span>
             </button>
