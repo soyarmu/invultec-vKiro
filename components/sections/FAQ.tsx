@@ -13,7 +13,7 @@ const faqs = [
   {
     question: '¿Qué beneficios le aporta a la suspensión de mi carro?',
     answer:
-      'El Rubber Shock RS-001 absorbe hasta un 35% de los golpes fuertes al pasar por huecos o resaltos, evita que el vehículo se agache por el peso de carga o pasajeros, mejora la estabilidad en curvas y prolonga la vida útil de tus amortiguadores originales.',
+      'El Rubber Shock RS-001 absorbe hasta un 35% de los golpes fuertes al pasar por huecos o resaltos, evita que el vehículo se agache por el peso de carga o pasajeros, mejora la estabilidad en curvas y prolonga la vida útil de tu suspensión original.',
   },
   {
     question: '¿Cuántas unidades vienen en cada paquete?',
@@ -53,7 +53,7 @@ export function FAQ() {
               Preguntas Frecuentes
             </h2>
             <p className="mt-4 text-lg text-neutral-600">
-              Resuelve tus dudas sobre el amortiguador de resorte Rubber Shock RS-001 de Invultec Colombia
+              Resuelve tus dudas sobre el soporte de resorte Rubber Shock RS-001 de Invultec Colombia
             </p>
           </div>
 

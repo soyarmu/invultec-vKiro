@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'rubber shock',
     'tope de suspensión',
     'buffer de resorte automotriz',
-    'amortiguador de suspensión',
+    'soporte de resorte automotriz',
     'espaciador de resorte',
     'tope de resorte helicoidal',
     'ajuste vehicular',

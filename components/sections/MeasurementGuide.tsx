@@ -50,7 +50,7 @@ export function MeasurementGuide() {
                     2. ¿Dónde se ubica el resorte?
                   </h3>
                   <p className="mt-1 text-neutral-600">
-                    En la mayoría de automóviles y camionetas en Colombia, el resorte helicoidal está instalado en el eje trasero o amortiguador delantero.
+                    En la mayoría de automóviles y camionetas en Colombia, el resorte helicoidal está instalado en la suspensión trasera o delantera.
                   </p>
                 </div>
 

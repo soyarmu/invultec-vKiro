@@ -13,12 +13,12 @@ const steps = [
     icon: CheckCircle,
     title: 'Encuentra tu ajuste',
     description:
-      "Analizaremos tu vehículo y recomendaremos el tamaño correcto del amortiguador basado en datos de compatibilidad.",
+      "Analizaremos tu vehículo y recomendaremos el tamaño correcto del Rubber Shock basado en datos de compatibilidad.",
   },
   {
     number: '03',
     icon: ShoppingCart,
-    title: 'Obtén tu amortiguador',
+    title: 'Obtén tu Rubber Shock',
     description:
       'Ordena con confianza sabiendo que tienes el tamaño correcto para tu vehículo.',
   },
