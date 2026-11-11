@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://xkpnllrmwvnsdyjqklqn.supabase.co';
@@ -7,13 +9,15 @@ const supabasePublicApiKey =
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
   '';
 
-const supabaseServiceRoleKey =
-  process.env.SUPABASE_SERVICE_ROLE_KEY ||
-  supabasePublicApiKey;
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !supabasePublicApiKey) {
+if (
+  !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+  !supabasePublicApiKey ||
+  !supabaseServiceRoleKey
+) {
   throw new Error(
-    '[Supabase] NEXT_PUBLIC_SUPABASE_URL y NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY (o NEXT_PUBLIC_SUPABASE_ANON_KEY) deben estar definidas en las variables de entorno.',
+    '[Supabase] NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY (o NEXT_PUBLIC_SUPABASE_ANON_KEY) y SUPABASE_SERVICE_ROLE_KEY deben estar definidas en las variables de entorno.',
   );
 }
 

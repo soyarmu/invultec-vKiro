@@ -33,6 +33,7 @@
 ### Out of Scope
 
 - Corrección de credenciales del MCP de Supabase (error `28P01`).
+- Cambio del número de WhatsApp (`573172130907` → `3223037521`): solicitado durante la implementación; fuera de scope, pendiente para la próxima spec.
 - Aplicación manual de `20261019_add_consent_to_leads.sql` si aún está pendiente en la DB alojada (pendiente operativo de SPEC 08; esta spec no toca columnas).
 - Endpoint de autenticación, migración a Supabase Auth o cualquier cambio de modelo de usuarios.
 - Escaneo de dependencias (npm audit), secrets en git history y DAST (ya excluidos en SPEC 07).
@@ -50,7 +51,8 @@ Sin cambios de esquema ni de tipos TypeScript. Solo políticas RLS:
 ```sql
 -- Hardening idempotente de RLS para public.leads
 -- Garantiza el estado final sin importar si 20261019_harden_leads_rls.sql fue aplicada.
--- Re-ejecutable sin error: DROP IF EXISTS + CREATE OR REPLACE.
+-- Re-ejecutable sin error: DROP POLICY IF EXISTS + CREATE POLICY
+-- (PostgreSQL no soporta CREATE OR REPLACE POLICY).
 
 ALTER TABLE public.leads ENABLE ROW LEVEL SECURITY;
 
@@ -60,19 +62,23 @@ DROP POLICY IF EXISTS "Permitir lectura de leads" ON public.leads;
 DROP POLICY IF EXISTS "Permitir inserción de leads" ON public.leads;
 DROP POLICY IF EXISTS "Permitir insercion de leads" ON public.leads;
 
+-- Reemplaza las políticas de 20261019_harden_leads_rls.sql si ya existen.
+DROP POLICY IF EXISTS "Inserción solo service role" ON public.leads;
+DROP POLICY IF EXISTS "Lectura solo service role" ON public.leads;
+
 -- Único actor con acceso: service_role (API Route del servidor).
-CREATE OR REPLACE POLICY "Inserción solo service role" ON public.leads
+CREATE POLICY "Inserción solo service role" ON public.leads
   FOR INSERT
   TO service_role
   WITH CHECK (true);
 
-CREATE OR REPLACE POLICY "Lectura solo service role" ON public.leads
+CREATE POLICY "Lectura solo service role" ON public.leads
   FOR SELECT
   TO service_role
   USING (true);
 ```
 
-Nota: `CREATE OR REPLACE POLICY` reemplaza las políticas del mismo nombre creadas por `20261019_harden_leads_rls.sql` si ya existen; `DROP POLICY IF EXISTS` elimina los tres nombres heredados de las migraciones permisivas. La migración asume que la tabla existe (las migraciones `20260902`/`01` ya la crearon en producción).
+Nota: PostgreSQL no soporta `CREATE OR REPLACE POLICY` (error 42601); la idempotencia se logra con `DROP POLICY IF EXISTS` + `CREATE POLICY` para los cinco nombres posibles (tres heredados de las migraciones permisivas y dos de `20261019_harden_leads_rls.sql`). La migración asume que la tabla existe (las migraciones `20260902`/`01` ya la crearon en producción).
 
 ### 2.2 `lib/supabase.ts` esperado (fragmento)
 
@@ -141,24 +147,33 @@ Cada paso deja el sistema funcional.
 ## 4. Acceptance Criteria
 
 ### Fail-fast
-- [ ] `lib/supabase.ts` no contiene `|| supabasePublicApiKey` para la service role key.
-- [ ] Importar `@/lib/supabase` sin `SUPABASE_SERVICE_ROLE_KEY` definida lanza error con el mensaje `[Supabase]`.
-- [ ] `import 'server-only'` es la primera línea de `lib/supabase.ts`.
-- [ ] `server-only` aparece en `dependencies` de `package.json`.
-- [ ] `tests/unit/lib/supabase.test.ts` pasa en `npm run test`.
+- [x] `lib/supabase.ts` no contiene `|| supabasePublicApiKey` para la service role key.
+- [x] Importar `@/lib/supabase` sin `SUPABASE_SERVICE_ROLE_KEY` definida lanza error con el mensaje `[Supabase]`.
+- [x] `import 'server-only'` es la primera línea de `lib/supabase.ts`.
+- [x] `server-only` aparece en `dependencies` de `package.json`.
+- [x] `tests/unit/lib/supabase.test.ts` pasa en `npm run test`.
 
 ### RLS
-- [ ] Existe `supabase/migrations/20261109_harden_leads_rls.sql` con el contenido de la sección 2.1.
-- [ ] `pg_policies` en Supabase muestra solo "Lectura solo service role" e "Inserción solo service role" sobre `public.leads`, ambas con `roles = {service_role}`.
-- [ ] `GET {SUPABASE_URL}/rest/v1/leads?select=*` con la anon key devuelve 0 filas (o error de permiso).
-- [ ] El formulario sigue insertando leads correctamente vía `/api/leads` y redirige a WhatsApp.
+- [x] Existe `supabase/migrations/20261109_harden_leads_rls.sql` con el contenido de la sección 2.1.
+- [x] `pg_policies` en Supabase muestra solo "Lectura solo service role" e "Inserción solo service role" sobre `public.leads`, ambas con `roles = {service_role}`.
+- [x] `GET {SUPABASE_URL}/rest/v1/leads?select=*` con la anon key devuelve 0 filas (o error de permiso).
+- [x] El formulario sigue insertando leads correctamente vía `/api/leads` y redirige a WhatsApp.
 
 ### Cierre de seguridad
-- [ ] `npm run security-review` termina con 0 CRITICAL y 0 HIGH.
-- [ ] `npm run lint`, `npx tsc --noEmit`, `npm run test` y `npm run build` sin errores.
+- [x] `npm run security-review` termina con 0 CRITICAL y 0 HIGH.
+- [x] `npm run lint`, `npx tsc --noEmit`, `npm run test` y `npm run build` sin errores.
 
 ### Rate limiter
-- [ ] La decisión de aceptar `x-forwarded-for` (sección 5) y su riesgo residual (sección 6) están documentados en este spec.
+- [x] La decisión de aceptar `x-forwarded-for` (sección 5) y su riesgo residual (sección 6) están documentados en este spec.
+
+### Resultados de verificación (2026-11-11)
+
+- **Security review**: 0 CRITICAL / 0 HIGH / 0 MEDIUM / 9 LOW (preexistentes en `lib/analytics/analytics.ts`, `app/api/leads/route.ts`, `app/api/health/supabase/route.ts`). Riesgo general: LOW. ✅ PASSED. Reporte: `security-reports/latest.json`.
+- **`pg_policies` (producción)**: solo `Inserción solo service role` (INSERT) e `Lectura solo service role` (SELECT), ambas `roles = {service_role}`.
+- **Acceso anon/publishable a `/rest/v1/leads`**: HTTP 200 con `[]` (0 filas) con ambas claves.
+- **E2E**: lead de prueba insertado (Toyota Hilux 2024, `converted_to_wa: true`) + redirección a `api.whatsapp.com` con `573172130907`.
+- **Desviación del spec**: PostgreSQL no soporta `CREATE OR REPLACE POLICY` (error 42601); la migración usa `DROP POLICY IF EXISTS` + `CREATE POLICY`. Sección 2.1 actualizada en consecuencia.
+- **Historial de migraciones**: la DB alojada tiene 3 versiones remotas (`20261026201157/1202/1216`) sin equivalente local; el push por CLI queda bloqueado (`DbPushMissingLocalError`). La migración se aplicó por `supabase db query --remote --file`. Reconciliar historial queda pendiente (higiene operativa, sin impacto en el estado final).
 
 ---
 
