@@ -7,7 +7,7 @@ export const refundsSections: LegalSection[] = [
     id: 'alcance',
     heading: '1. Alcance de esta política',
     body: [
-      'Esta política aplica a todas las compras de Rubber Shock RS-001 realizadas a distancia, es decir, coordinadas y cerradas por WhatsApp u otro canal no presencial, dentro del territorio colombiano.',
+      'Esta política aplica a todas las compras de Rubber Shock realizadas a distancia, es decir, coordinadas y cerradas por WhatsApp u otro canal no presencial, dentro del territorio colombiano.',
       'Se rige por la Ley 1480 de 2011 (Estatuto del Consumidor) y sus normas reglamentarias.',
     ],
   },
@@ -58,7 +58,7 @@ export const refundsSections: LegalSection[] = [
     id: 'garantia',
     heading: '7. Garantía del producto',
     body: [
-      'El Rubber Shock RS-001 cuenta con garantía por defectos de fabricación. La vigencia y las condiciones específicas de la garantía se informan con la cotización y en el empaque del producto.',
+      'El Rubber Shock cuenta con garantía por defectos de fabricación. La vigencia y las condiciones específicas de la garantía se informan con la cotización y en el empaque del producto.',
       'La garantía no cubre el desgaste natural, daños por accidentes, ni fallas derivadas de la instalación o del estado previo de la suspensión del vehículo.',
     ],
   },

@@ -5,7 +5,7 @@ import { refundsSections, REFUNDS_UPDATED } from '@/content/legal/refunds';
 export const metadata: Metadata = {
   title: 'Política de Reembolso y Garantía | Invultec Colombia',
   description:
-    'Derecho de retracto, devoluciones y garantía del Rubber Shock RS-001.',
+    'Derecho de retracto, devoluciones y garantía del Rubber Shock.',
   robots: { index: true, follow: true },
 };
 

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { COMPANY_DATA } from '@/lib/company';
 
 export function Footer() {
@@ -19,13 +20,14 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {/* Marca / Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-red">
-                <span className="text-lg font-extrabold text-white">INV</span>
-              </div>
-              <span className="text-xl font-bold text-white">
-                Invultec Colombia
-              </span>
+            <div className="flex items-center">
+              <Image
+                src="/images/LogoBlanco.png"
+                alt="Invultec Colombia"
+                width={170}
+                height={17}
+                className="h-6 w-auto"
+              />
             </div>
             <p className="mt-4 max-w-md text-sm text-neutral-400">
               Especialistas en Rubber Shock de alta resistencia para la suspensión de todo tipo de vehículos en Colombia. Protege tu suspensión, mejora el confort y viaja con total tranquilidad.
@@ -180,7 +182,7 @@ export function Footer() {
             de la columna Legal.
           </p>
           <p className="mt-4 text-center text-sm text-neutral-400">
-            &copy; {currentYear} {COMPANY_DATA.tradeName} — Rubber Shock RS-001.
+            &copy; {currentYear} {COMPANY_DATA.tradeName} — Rubber Shock.
             Todos los derechos reservados.
           </p>
         </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -45,12 +46,17 @@ export function Navbar() {
           <div className="flex items-center">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center gap-2 text-xl font-bold text-neutral-900 hover:text-brand-red transition-colors"
+              className="flex items-center transition-opacity hover:opacity-80"
+              aria-label="Rubber Shock Invultec — volver al inicio"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-red">
-                <span className="text-lg font-bold text-white">I</span>
-              </div>
-              <span className="hidden sm:inline">Rubber Shock</span>
+              <Image
+                src="/images/LogoSinDescripcion.png"
+                alt="Rubber Shock Invultec"
+                width={2185}
+                height={512}
+                priority
+                className="h-10 w-auto sm:h-12"
+              />
             </button>
           </div>
 

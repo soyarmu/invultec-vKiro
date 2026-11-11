@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
 
     // Función para construir la URL de WhatsApp
     const buildWhatsAppUrl = (n: string, b: string, m: string, y: string) => {
-      const message = `Hola Invultec, quiero información sobre el Rubber Shock RS-001 para mi ${b} ${m} ${y}. Mi nombre es ${n}.`;
+      const message = `Hola Invultec, quiero información sobre el Rubber Shock para mi ${b} ${m} ${y}. Mi nombre es ${n}.`;
       return `https://wa.me/${cleanWaNumber}?text=${encodeURIComponent(message)}`;
     };
 

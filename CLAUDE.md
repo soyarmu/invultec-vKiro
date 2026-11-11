@@ -27,7 +27,8 @@
 
 1. **Language & Target Audience**: 100% Spanish tailored for the Colombian automotive aftermarket.
 2. **Official Brand Terminology**:
-   - Product name: **Rubber Shock RS-001** (or *Rubber Shock Invultec*)
+   - Product name: **Rubber Shock** (or *Rubber Shock Invultec*) — sin referencia "RS-001" en textos visibles
+   - Product description: **soporte de neopreno** que se instala dentro del resorte helicoidal (no usar "amortiguador")
    - Vehicle component: **resortes helicoidales** (helicoidal springs)
    - Material: **neopreno de alta resistencia** (high-resistance neoprene rubber)
 3. **Corporate Color Palette**:

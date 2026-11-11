@@ -8,7 +8,7 @@ export const termsSections: LegalSection[] = [
     id: 'identificacion',
     heading: '1. Identificación del responsable',
     body: [
-      `Este sitio web es operado por ${COMPANY_DATA.legalName}, distribuidor del producto Rubber Shock RS-001. El canal oficial de atención, cotización y cierre de ventas es el WhatsApp publicado en el sitio.`,
+      `Este sitio web es operado por ${COMPANY_DATA.legalName}, distribuidor del producto Rubber Shock. El canal oficial de atención, cotización y cierre de ventas es el WhatsApp publicado en el sitio.`,
       'Al utilizar este sitio aceptas los presentes Términos del Servicio. Si no estás de acuerdo, debes abstenerte de usar el sitio.',
     ],
   },
@@ -16,7 +16,7 @@ export const termsSections: LegalSection[] = [
     id: 'objeto',
     heading: '2. Objeto del servicio',
     body: [
-      'Este sitio tiene como finalidad informar sobre el producto Rubber Shock RS-001, ayudar a identificar la compatibilidad con tu vehículo y facilitar el contacto con nuestro equipo de ventas por WhatsApp.',
+      'Este sitio tiene como finalidad informar sobre el producto Rubber Shock, ayudar a identificar la compatibilidad con tu vehículo y facilitar el contacto con nuestro equipo de ventas por WhatsApp.',
       'La información de compatibilidad es una orientación basada en los datos que ingresas (marca, modelo y año). La confirmación definitiva se realiza con un asesor antes de la compra.',
     ],
   },

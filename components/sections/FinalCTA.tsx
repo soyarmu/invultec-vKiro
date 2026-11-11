@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MessageSquare } from 'lucide-react';
+import { ArrowRight, MessageSquare, Wrench } from 'lucide-react';
 
 export function FinalCTA() {
   const scrollToFinder = () => {
@@ -38,6 +38,14 @@ export function FinalCTA() {
                 aria-hidden="true"
               />
             </Button>
+          </div>
+          <div className="mt-6 flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-brand-red-50 px-5 py-2.5 text-sm font-semibold text-brand-red-accessible">
+              <Wrench className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
+              <span>
+                Instalación totalmente gratis en nuestras instalaciones con personal especializado
+              </span>
+            </div>
           </div>
         </div>
       </div>

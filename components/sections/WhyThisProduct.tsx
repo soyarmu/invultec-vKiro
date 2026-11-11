@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Shield, Wrench, Layers, Package } from 'lucide-react';
 
 const benefits = [
@@ -30,35 +31,50 @@ export function WhyThisProduct() {
   return (
     <section className="bg-white py-16 sm:py-20">
       <div className="container-custom">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold text-neutral-900 sm:text-4xl">
-            ¿Por Qué Elegir Rubber Shock?
-          </h2>
-          <p className="mt-4 text-lg text-neutral-600">
-            Componentes de precisión ingeniera para el sistema de suspensión de tu vehículo.
-          </p>
-        </div>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          {/* Imagen del producto */}
+          <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-md">
+            <Image
+              src="/images/RuberIA.png"
+              alt="Rubber Shock — soporte de neopreno de alta resistencia"
+              width={1024}
+              height={1536}
+              sizes="(max-width: 640px) 20rem, (max-width: 1024px) 24rem, 28rem"
+              className="h-auto w-full object-contain"
+            />
+          </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center"
-              >
-                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-brand-red bg-opacity-10">
-                  <Icon className="h-8 w-8 text-brand-red" aria-hidden="true" />
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-neutral-900">
-                  {benefit.title}
-                </h3>
-                <p className="mt-2 text-sm text-neutral-600">
-                  {benefit.description}
-                </p>
-              </div>
-            );
-          })}
+          {/* Texto y beneficios */}
+          <div>
+            <h2 className="text-3xl font-bold text-neutral-900 sm:text-4xl">
+              ¿Por Qué Elegir Rubber Shock?
+            </h2>
+            <p className="mt-4 text-lg text-neutral-600">
+              Componentes de precisión ingeniera para el sistema de suspensión de tu vehículo.
+            </p>
+
+            <div className="mt-10 grid gap-8 sm:grid-cols-2">
+              {benefits.map((benefit, index) => {
+                const Icon = benefit.icon;
+                return (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center text-center"
+                  >
+                    <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-brand-red bg-opacity-10">
+                      <Icon className="h-8 w-8 text-brand-red" aria-hidden="true" />
+                    </div>
+                    <h3 className="mt-4 text-lg font-semibold text-neutral-900">
+                      {benefit.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-neutral-600">
+                      {benefit.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

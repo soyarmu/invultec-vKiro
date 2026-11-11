@@ -7,7 +7,7 @@ import { Product, ProductType } from '@/types/fitment';
 
 export const availableProduct: Product = {
   id: 'rs001-a-plus',
-  name: 'Rubber Shock RS-001 Tipo A+',
+  name: 'Rubber Shock Tipo A+',
   type: 'A+',
   price: 45000,
   image: '/images/rs001-a-plus.jpg',
@@ -21,7 +21,7 @@ export const availableProduct: Product = {
 
 export const unavailableProduct: Product = {
   id: 'rs001-e',
-  name: 'Rubber Shock RS-001 Tipo E',
+  name: 'Rubber Shock Tipo E',
   type: 'E',
   price: 38000,
   image: '/images/rs001-e.jpg',
@@ -35,7 +35,7 @@ export const unavailableProduct: Product = {
 
 export const productTypeBPlus: Product = {
   id: 'rs001-b-plus',
-  name: 'Rubber Shock RS-001 Tipo B+',
+  name: 'Rubber Shock Tipo B+',
   type: 'B+',
   price: 47000,
   image: '/images/rs001-b-plus.jpg',
@@ -49,7 +49,7 @@ export const productTypeBPlus: Product = {
 
 export const productTypeC: Product = {
   id: 'rs001-c',
-  name: 'Rubber Shock RS-001 Tipo C',
+  name: 'Rubber Shock Tipo C',
   type: 'C',
   price: 49000,
   image: '/images/rs001-c.jpg',
@@ -63,7 +63,7 @@ export const productTypeC: Product = {
 
 export const productTypeD: Product = {
   id: 'rs001-d',
-  name: 'Rubber Shock RS-001 Tipo D',
+  name: 'Rubber Shock Tipo D',
   type: 'D',
   price: 51000,
   image: '/images/rs001-d.jpg',

@@ -6,19 +6,19 @@ import { cn } from '@/lib/utils';
 
 const faqs = [
   {
-    question: '¿Le servirá el Rubber Shock RS-001 a mi vehículo?',
+    question: '¿Le servirá el Rubber Shock a mi vehículo?',
     answer:
       'Usa nuestro buscador de compatibilidad vehicular en esta página. Selecciona tu marca, modelo y año para conocer la disponibilidad. Si tu vehículo no aparece o tiene la suspensión modificada, nuestros asesores técnicos de Invultec te atenderán directamente por WhatsApp para confirmarte la medida exacta.',
   },
   {
     question: '¿Qué beneficios le aporta a la suspensión de mi carro?',
     answer:
-      'El Rubber Shock RS-001 absorbe hasta un 35% de los golpes fuertes al pasar por huecos o resaltos, evita que el vehículo se agache por el peso de carga o pasajeros, mejora la estabilidad en curvas y prolonga la vida útil de tu suspensión original.',
+      'El Rubber Shock absorbe hasta un 35% de los golpes fuertes al pasar por huecos o resaltos, evita que el vehículo se agache por el peso de carga o pasajeros, mejora la estabilidad en curvas y prolonga la vida útil de tu suspensión original.',
   },
   {
     question: '¿Cuántas unidades vienen en cada paquete?',
     answer:
-      'Cada kit Rubber Shock RS-001 incluye un par (2 unidades de neopreno reforzado) listo para ser instalado en un eje de tu vehículo.',
+      'Cada kit Rubber Shock incluye un par (2 unidades de neopreno reforzado) listo para ser instalado en un eje de tu vehículo.',
   },
   {
     question: '¿Requiere modificar la suspensión para instalarlo?',
@@ -29,6 +29,11 @@ const faqs = [
     question: '¿Es difícil de instalar?',
     answer:
       'No requiere herramientas especializadas. Se instala directamente entre las espiras del resorte helicoidal cuando el vehículo está elevado o en reposo. Enviarás un mensaje a WhatsApp y te adjuntaremos el manual visual de instalación paso a paso.',
+  },
+  {
+    question: '¿Cuánto cuesta la instalación?',
+    answer:
+      '¡Totalmente gratis! Si te acercas a nuestras instalaciones, nuestro personal especializado instala tu Rubber Shock sin costo adicional. Y si prefieres hacerlo tú mismo, es un proceso sencillo que no requiere herramientas especializadas.',
   },
   {
     question: '¿Hacen envíos a toda Colombia?',
@@ -53,7 +58,7 @@ export function FAQ() {
               Preguntas Frecuentes
             </h2>
             <p className="mt-4 text-lg text-neutral-600">
-              Resuelve tus dudas sobre el soporte de resorte Rubber Shock RS-001 de Invultec Colombia
+              Resuelve tus dudas sobre el soporte de resorte Rubber Shock de Invultec Colombia
             </p>
           </div>
 

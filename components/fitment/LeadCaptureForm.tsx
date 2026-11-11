@@ -126,7 +126,7 @@ export function LeadCaptureForm() {
     <div className="w-full max-w-xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-neutral-100">
       <div className="mb-6 text-center">
         <span className="inline-block px-3 py-1 bg-brand-red-50 text-brand-red-accessible text-xs font-bold rounded-full uppercase tracking-wider mb-2">
-          Rubber Shock RS-001
+          Rubber Shock
         </span>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900">
           Consulta la Compatibilidad de tu Vehículo

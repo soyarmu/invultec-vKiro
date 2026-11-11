@@ -212,7 +212,7 @@ export function Hero() {
       <div className="layer-content relative z-[5] col-span-1 px-6 py-24 opacity-0 translate-y-3.5 animate-content-in sm:px-12 lg:px-16 lg:py-32">
         <p className="eyebrow font-mono text-xs uppercase tracking-[0.14em] text-brand-red-onDark flex items-center gap-2.5 mb-4">
           <span className="w-[26px] h-px bg-brand-red" />
-          Ref. RS-001 · 100% neopreno
+          100% neopreno de alta resistencia
         </p>
 
         <h1 className="font-display text-[clamp(2.6rem,6vw,4.6rem)] font-bold leading-[0.96] tracking-tight uppercase text-neutral-0 mb-4">
@@ -272,7 +272,7 @@ export function Hero() {
         <div className="product-parallax animate-idle-float relative w-[min(110%,880px)] aspect-[2752/1536]">
           <Image
             src="/images/1ruber_hero_invultec.png"
-            alt="Rubber Shock RS-001 - Render 3D cinematográfico y vista rayos X de suspensión"
+            alt="Rubber Shock - Render 3D cinematográfico y vista rayos X de suspensión"
             fill
             priority
             sizes="(max-width: 640px) 95vw, (max-width: 1024px) 80vw, 880px"
